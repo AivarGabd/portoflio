@@ -1,9 +1,8 @@
 "use client";
 
-
-import {  useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import ExampleWrapper from "@/components/ExampleWrapper";
 
 export type itemType = {
   id: string;
@@ -51,55 +50,53 @@ const array: itemType[] = [
   },
 ];
 
-
-
 const Item = ({
-    data,
-    itemSelectEvent,
-  }: {
-    data: itemType;
-    itemSelectEvent: (newItem: itemType) => void;
-  }) => {
-    return (
+  data,
+  itemSelectEvent,
+}: {
+  data: itemType;
+  itemSelectEvent: (newItem: itemType) => void;
+}) => {
+  return (
+    <motion.div
+      className="group flex w-96 cursor-pointer items-center gap-4 px-4"
+      onClick={() => itemSelectEvent(data)}
+      layoutId={data.id}
+    >
+      <motion.img
+        height="56"
+        width="56"
+        src={data.img}
+        layoutId={`image-${data.id}`}
+        style={{
+          borderRadius: 14,
+        }}
+      />
       <motion.div
-        className="group flex w-96 cursor-pointer items-center gap-4 px-4"
-        onClick={() => itemSelectEvent(data)}
-        layoutId={data.id}
+        className="flex grow items-center justify-between border-b border-[#B5B3AD] group-last:border-none"
+        layoutId={`block-${data.id}`}
       >
-        <motion.img
-          height="56"
-          width="56"
-          src={data.img}
-          layoutId={`image-${data.id}`}
-          style={{
-            borderRadius: 14,
-          }}
-        />
-         <motion.div
-          className="flex grow items-center justify-between border-b border-[#B5B3AD] group-last:border-none"
-          layoutId={`block-${data.id}`}
+        <motion.div
+          className="flex flex-col gap-0.5 py-3"
+          layoutId={`link-${data.id}`}
         >
-          <motion.div
-            className="flex flex-col gap-0.5 py-3"
-            layoutId={`link-${data.id}`}
+          <motion.h2
+            className="text-sm font-medium"
+            layoutId={`title-${data.id}`}
           >
-            <motion.h2
-              className="text-sm font-medium"
-              layoutId={`title-${data.id}`}
-            >
-              {data.title}
-            </motion.h2>
-            <motion.p
-              className="text-sm text-[#B5B3AD] font-medium"
-              layoutId={`description-${data.id}`}
-            >
-              {data.description}
-            </motion.p>
-          </motion.div>
+            {data.title}
+          </motion.h2>
+          <motion.p
+            className="text-sm text-[#B5B3AD] font-medium"
+            layoutId={`description-${data.id}`}
+          >
+            {data.description}
+          </motion.p>
         </motion.div>
       </motion.div>
-    );
-  };
+    </motion.div>
+  );
+};
 
 const DesktopDialogWindow = ({
   selectedItem,
@@ -179,25 +176,23 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 mt-[20vh]">
-      <div className="bg-black h-fit w-full lg:rounded-xl border border-[#191918] px-4 py-6 relative ">
-        <div className="flex w-full px-4 py-6 md:rounded-xl relative h-[423px] items-start overflow-hidden">
-          <div className="relative flex w-full flex-col items-center px-2">
-            {array.map((item) => (
-              <Item
-                key={item.title}
-                data={item}
-                itemSelectEvent={itemSelectEvent}
-              />
-            ))}
-          </div>
+    <ExampleWrapper>
+      <div className="flex w-full px-4 py-6 md:rounded-xl relative h-[423px] items-start overflow-hidden">
+        <div className="relative flex w-full flex-col items-center px-2">
+          {array.map((item) => (
+            <Item
+              key={item.title}
+              data={item}
+              itemSelectEvent={itemSelectEvent}
+            />
+          ))}
         </div>
-        <DesktopDialogWindow
-          selectedItem={selectedItem}
-          clickAwayListener={clickAwayListener}
-        />
       </div>
-    </div>
+      <DesktopDialogWindow
+        selectedItem={selectedItem}
+        clickAwayListener={clickAwayListener}
+      />
+    </ExampleWrapper>
   );
 };
 

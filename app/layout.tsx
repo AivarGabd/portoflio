@@ -29,7 +29,7 @@ export default function RootLayout({
 
       <body
         className={cn(
-          "bg-[#111110] text-[#EEEEEC] min-h-screen",
+          "bg-[#111110] text-[#EEEEEC] min-h-screen dark",
           inter.className
         )}
       >
