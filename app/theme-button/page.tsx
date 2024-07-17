@@ -26,7 +26,7 @@ const Page = () => {
       <div className="m-auto">
         <Button
           size="lg"
-          variant="flat"
+          variant="solid"
           radius="sm"
           isIconOnly
           onClick={() => {
