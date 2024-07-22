@@ -17,14 +17,12 @@ const ExampleWrapper = ({
         <ChevronLeft />
       </Button>
     </a>
-    <div className="mt-[20vh]">
-      <div
-        className={cn(
-          `bg-black w-full lg:rounded-xl border border-[#191918] px-4 py-6 relative flex min-h-[250px] ${styles}`
-        )}
-      >
-        {children}
-      </div>
+    <div
+      className={cn(
+        `mt-[20vh] bg-black w-full lg:rounded-xl border border-[#191918] px-4 py-6 relative flex min-h-[250px] ${styles}`
+      )}
+    >
+      {children}
     </div>
   </>
 );

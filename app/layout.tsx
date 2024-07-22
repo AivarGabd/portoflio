@@ -35,7 +35,7 @@ export default function RootLayout({
       >
         <LayoutClient reqUserAgent={reqUserAgent}>
           <NextUIProvider>
-            <main className="max-w-[644px] pt-12 mx-auto ">{children}</main>
+            <main className="max-w-[644px] pt-12 mx-auto px-2">{children}</main>
           </NextUIProvider>
         </LayoutClient>
       </body>

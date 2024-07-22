@@ -18,8 +18,8 @@ const animals = [
 
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
-import { ChevronsUpDown, Filter, Search, User } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronsUpDown, Search, User } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Page = () => {
@@ -49,7 +49,6 @@ const Page = () => {
       <ExampleWrapper>
         <div className="m-auto flex flex-row gap-1 relative z-50 ">
           <motion.div
-            custom={0}
             initial={{
               width: 80,
             }}
@@ -59,6 +58,7 @@ const Page = () => {
           >
             <Input
               isClearable
+              list="ice-cream-flavors"
               startContent={
                 <div>
                   <Search className="block" size={18} />
@@ -71,10 +71,17 @@ const Page = () => {
                 setIsInputExpanded(true);
               }}
             />
+
+            <datalist id="ice-cream-flavors">
+              <option value="Chocolate"></option>
+              <option value="Coconut"></option>
+              <option value="Mint"></option>
+              <option value="Strawberry"></option>
+              <option value="Vanilla"></option>
+            </datalist>
           </motion.div>
 
           <motion.div
-            custom={1}
             initial={{
               width: 80,
             }}
@@ -107,7 +114,6 @@ const Page = () => {
           </motion.div>
 
           <motion.div
-            custom={2}
             initial={{
               width: 51,
             }}
@@ -121,7 +127,7 @@ const Page = () => {
                 setSelectorOpen(false);
                 setIsSelectorExpanded(false);
                 setIsInputExpanded(false);
-                setIsButtonExpanded(true)
+                setIsButtonExpanded(true);
               }}
             >
               <div className=" m-auto ml-0">
