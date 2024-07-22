@@ -57,6 +57,7 @@ const Page = () => {
             }}
           >
             <Input
+              className="text-[16px]"
               isClearable
               list="ice-cream-flavors"
               startContent={

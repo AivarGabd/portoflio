@@ -67,18 +67,23 @@ export default function Home() {
         <div>
           <div className=" flex flex-col gap-3">
             <h2 className="text-lg font-medium">Проекты</h2>
-            <div className="hover:bg-focus rounded-md px-1 py-3">
+           <Link href={'https://ideaparallels.vercel.app/'}>
+           <div className="hover:bg-focus rounded-md px-1 py-3">
               <div>ideaparallels</div>
               <div className="text-light-grey text-sm">
-                Средство для перемещения между образовательным контентом
+                Разбираться в контенте без ai и алгоритмов
               </div>
             </div>
-            <div className="hover:bg-focus rounded-md px-1 py-3">
-              <div>malwand</div>
-              <div className="text-light-grey text-sm">
-                Табличный вид для MyAnimeList
+           </Link>
+
+            <Link href={"https://malwand.vercel.app/"}>
+              <div className="hover:bg-focus rounded-md px-1 py-3">
+                <div>malwand</div>
+                <div className="text-light-grey text-sm">
+                  Табличный вид для персонального листа в MyAnimeList
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
