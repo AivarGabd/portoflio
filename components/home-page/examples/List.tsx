@@ -59,7 +59,7 @@ const Item = ({
 }) => {
   return (
     <motion.div
-      className="group flex w-96 lg:w-[450px] cursor-pointer items-center gap-4 px-2"
+      className="group flex w-[340px] lg:w-[450px] cursor-pointer items-center gap-4 px-2"
       onClick={() => itemSelectEvent(data)}
       layoutId={data.id}
     >
@@ -177,7 +177,7 @@ const List = () => {
 
   return (
     <ExampleWrapper>
-      <div className="flex w-[370px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
+      <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
         <div className="relative flex w-full flex-col items-center lg:px-2">
           {array.map((item) => (
             <Item
