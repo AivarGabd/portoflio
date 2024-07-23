@@ -17,12 +17,15 @@ const animals = [
 ];
 
 import ExampleWrapper from "@/components/ExampleWrapper";
+import { useIsMobile } from "@/lib/useIsMobile";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsUpDown, Search, User } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const ExpandableButtons = () => {
+  const isMobile = useIsMobile();
+
   const [isSelectorOpen, setSelectorOpen] = useState(false);
   const [isSelectorExpanded, setIsSelectorExpanded] = useState(false);
   const [isInputExpanded, setIsInputExpanded] = useState(false);
@@ -73,13 +76,15 @@ const ExpandableButtons = () => {
               }}
             />
 
-            {/* <datalist id="ice-cream-flavors">
-              <option value="Chocolate"></option>
-              <option value="Coconut"></option>
-              <option value="Mint"></option>
-              <option value="Strawberry"></option>
-              <option value="Vanilla"></option>
-            </datalist> */}
+            {!isMobile ? (
+              <datalist id="ice-cream-flavors">
+                <option value="Chocolate"></option>
+                <option value="Coconut"></option>
+                <option value="Mint"></option>
+                <option value="Strawberry"></option>
+                <option value="Vanilla"></option>
+              </datalist>
+            ) : null}
           </motion.div>
 
           <motion.div

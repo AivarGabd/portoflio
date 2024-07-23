@@ -25,22 +25,22 @@ const UIExamples = [
   },
   {
     name: "Табы",
-    text: "С анимациями как в vercel.com/dashboard",
+    text: "С анимацией как в vercel.com/dashboard",
     component: <Tabs />,
   },
   {
     name: "Шторка снизу",
-    text: "Перетаскиваемая нижняя шторка для мобильный устройств",
+    text: "Перетаскиваемая нижняя шторка для мобильных устройств",
     component: <CustomDrawer />,
   },
   {
     name: "Компактные интерактивные элементы",
-    text: "Расширяющиеся кликабольные элементы для мобильный устройств",
+    text: "Расширяющиеся кликабельные элементы для мобильных устройств",
     component: <ExpandableButtons />,
   },
   {
     name: "Кнопка для смены светлой/темной тем",
-    text: "",
+    text: "Почти как у joshwcomeau.com",
     component: <ThemeButton />,
   },
 ];
@@ -108,7 +108,7 @@ export default function Home() {
             <div className="hover:bg-focus rounded-md px-1 py-3">
               <div>ideaparallels</div>
               <div className="text-light-grey text-sm">
-                Разбираться в контенте без ai и алгоритмов
+                Платформа для углубления в образовательный контент, без алгоритмов и AI
               </div>
             </div>
           </Link>
