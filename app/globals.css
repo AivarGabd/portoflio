@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/**
+body {
+    width: calc( 100% );
+    max-width: calc( 100vw - 1em );
+}
+*/
 @layer base {
   :root {
     --background: 0 0% 100%;

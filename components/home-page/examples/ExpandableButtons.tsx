@@ -22,7 +22,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsUpDown, Search, User } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const Page = () => {
+const ExpandableButtons = () => {
   const [isSelectorOpen, setSelectorOpen] = useState(false);
   const [isSelectorExpanded, setIsSelectorExpanded] = useState(false);
   const [isInputExpanded, setIsInputExpanded] = useState(false);
@@ -47,7 +47,7 @@ const Page = () => {
   return (
     <>
       <ExampleWrapper>
-        <div className="m-auto flex flex-row gap-1 relative z-50 ">
+        <div className="m-auto flex flex-row gap-1 relative z-50">
           <motion.div
             initial={{
               width: 80,
@@ -160,4 +160,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ExpandableButtons;

@@ -1,35 +1,47 @@
 import DBBagesBlock from "@/components/home-page/DBBagesBlock";
+import CustomDrawer from "@/components/home-page/examples/Drawer";
+import ExpandableButtons from "@/components/home-page/examples/ExpandableButtons";
+import List from "@/components/home-page/examples/List";
+import Tabs from "@/components/home-page/examples/Tabs";
+import ThemeButton from "@/components/home-page/examples/ThemeButton";
 import StateManagersBadgesBlock from "@/components/home-page/StateManagersBadgesBlock";
 import UIBadgesBlock from "@/components/home-page/UIBadgesBlock";
 import { Avatar, Chip } from "@nextui-org/react";
-import { Github } from "lucide-react";
+import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import BottomLink from "@/components/home-page/BottomLink";
 
 const UIExamples = [
   {
-    name: "Список",
+    name: "Интерактивный список",
     text: "С анимацией открытия как в IOS",
-    link: "/list-item",
+    component: <List />,
   },
   {
     name: "Табы",
     text: "С анимациями как в vercel.com/dashboard",
-    link: "/vercel-tabs",
+    component: <Tabs />,
   },
   {
     name: "Шторка снизу",
     text: "Перетаскиваемая нижняя шторка для мобильный устройств",
-    link: "/custom-drawer",
+    component: <CustomDrawer />,
   },
   {
     name: "Компактные интерактивные элементы",
-    text: "Расширяюшиеся кликабольные элементы для мобильный устройств",
-    link: "/mobile-buttons",
+    text: "Расширяющиеся кликабольные элементы для мобильный устройств",
+    component: <ExpandableButtons />,
   },
   {
     name: "Кнопка для смены светлой/темной тем",
     text: "",
-    link: "/theme-button",
+    component: <ThemeButton />,
   },
 ];
 
@@ -37,9 +49,26 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col gap-[100px]">
-        <div>
-          <div className="font-medium">Айвар Габдрахманов</div>
-          <div className="text-light-grey">Full-stack web dev</div>
+        <div className=" flex flex-col gap-2">
+          <div className="w-full flex">
+            <div className="w-fit">
+              <div className="font-medium">Айвар Габдрахманов</div>
+              <div className="text-light-grey">Full-stack web dev</div>
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap">
+            <Chip
+              variant="flat"
+              size="sm"
+              avatar={<Avatar name="nextjs" src="/home-page/nextjs.png" />}
+            >
+              nextjs
+            </Chip>
+            <UIBadgesBlock />
+            <StateManagersBadgesBlock />
+            <DBBagesBlock />
+          </div>
         </div>
 
         <div className="flex flex-col gap-1.5">
@@ -52,61 +81,53 @@ export default function Home() {
 
         <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">UI</h2>
-          <div className=" flex flex-col gap-3">
-            {UIExamples.map((item) => (
-              <Link href={item.link} key={item.link}>
-                <div className="hover:bg-focus rounded-md px-1 py-3">
-                  <div>{item.name}</div>
-                  <div className=" text-light-grey text-sm">{item.text}</div>
-                </div>
-              </Link>
+          <Accordion type="single" collapsible className="w-full ">
+            {UIExamples.map((item, index) => (
+              <AccordionItem
+                value={`item-${index}`}
+                key={`item-${index}`}
+                className="hover:bg-focus rounded-md px-1 border-none"
+              >
+                <AccordionTrigger className="hover:no-underline font-normal">
+                  <div className="flex flex-col gap-0 text-left">
+                    <div className="text-base no-underline">{item.name}</div>
+                    <div className=" text-light-grey text-sm">{item.text}</div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="w-full flex">
+                  <div className="m-auto">{item.component}</div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
 
-        <div>
-          <div className=" flex flex-col gap-3">
-            <h2 className="text-lg font-medium">Проекты</h2>
-           <Link href={'https://ideaparallels.vercel.app/'}>
-           <div className="hover:bg-focus rounded-md px-1 py-3">
+        <div className=" flex flex-col gap-3">
+          <h2 className="text-lg font-medium">Проекты</h2>
+          <Link href={"https://ideaparallels.vercel.app/"}>
+            <div className="hover:bg-focus rounded-md px-1 py-3">
               <div>ideaparallels</div>
               <div className="text-light-grey text-sm">
                 Разбираться в контенте без ai и алгоритмов
               </div>
             </div>
-           </Link>
+          </Link>
 
-            <Link href={"https://malwand.vercel.app/"}>
-              <div className="hover:bg-focus rounded-md px-1 py-3">
-                <div>malwand</div>
-                <div className="text-light-grey text-sm">
-                  Табличный вид для персонального листа в MyAnimeList
-                </div>
+          <Link href={"https://malwand.vercel.app/"}>
+            <div className="hover:bg-focus rounded-md px-1 py-3">
+              <div>malwand</div>
+              <div className="text-light-grey text-sm">
+                Табличный вид для персонального листа в MyAnimeList
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
 
-      <div className="w-full h-[200px]"></div>
-
-      <div className="max-w-[644px] fixed bottom-0 bg-neutral-900 p-2 flex flex-col gap-1 border-t-1 border-neutral-800 left-0 right-0 lg:left-auto lg:right-auto">
-        <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap">
-          <Chip
-            variant="flat"
-            size="sm"
-            avatar={<Avatar name="nextjs" src="/home-page/nextjs.png" />}
-          >
-            nextjs
-          </Chip>
-          <UIBadgesBlock />
-          <StateManagersBadgesBlock />
-          <DBBagesBlock />
-        </div>
-
-        <div className=" flex flex-row gap-2 text-xs text-light-grey font-medium">
+      <div>
+        <div className="mr-0 ml-auto inline-flex flex-row gap-2 text-light-grey text-right mt-[100px] text-sm">
+          <BottomLink />
           <div>aivargabd@gmail.com</div>
-          <div>с 19 лет в программировании</div>
         </div>
       </div>
     </>

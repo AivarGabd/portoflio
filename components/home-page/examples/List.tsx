@@ -59,7 +59,7 @@ const Item = ({
 }) => {
   return (
     <motion.div
-      className="group flex w-96 cursor-pointer items-center gap-4 px-4"
+      className="group flex w-96 lg:w-[450px] cursor-pointer items-center gap-4 px-2"
       onClick={() => itemSelectEvent(data)}
       layoutId={data.id}
     >
@@ -117,10 +117,10 @@ const DesktopDialogWindow = ({
     {selectedItem && (
       <motion.div
         layoutId={selectedItem?.id}
-        className="w-[95%] lg:w-[500px] h-[170px] m-auto absolute inset-0 z-80"
+        className="w-[92%] lg:w-[500px] h-[170px] m-auto absolute inset-0 z-80"
       >
         <div
-          className=" w-full p-4 flex flex-col gap-2"
+          className=" w-full p-4 flex flex-col gap-2 rounded-md"
           style={{ backgroundColor: "#111110" }}
         >
           <div className="gap-4 flex justify-center items-center pointer-events-none">
@@ -165,7 +165,7 @@ const DesktopDialogWindow = ({
   </AnimatePresence>
 );
 
-const Page = () => {
+const List = () => {
   const [selectedItem, setSelectedItem] = useState<itemType | null>(null);
   const itemSelectEvent = (newItem: itemType) => {
     setSelectedItem(newItem);
@@ -177,8 +177,8 @@ const Page = () => {
 
   return (
     <ExampleWrapper>
-      <div className="flex w-full px-4 py-6 md:rounded-xl relative h-[423px] items-start overflow-hidden">
-        <div className="relative flex w-full flex-col items-center px-2">
+      <div className="flex w-[370px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
+        <div className="relative flex w-full flex-col items-center lg:px-2">
           {array.map((item) => (
             <Item
               key={item.title}
@@ -196,4 +196,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default List;

@@ -4,7 +4,7 @@ import ExampleWrapper from "@/components/ExampleWrapper";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-let tabs = [
+let tabsData = [
   { id: "world", label: "World" },
   { id: "ny", label: "N.Y." },
   { id: "business", label: "Business" },
@@ -12,9 +12,9 @@ let tabs = [
   { id: "science", label: "Science" },
 ];
 
-function Page() {
-  let [activeTab, setActiveTab] = useState(tabs[0].id);
-  let [focusedTab, setFocusedTab] = useState<string | null>(tabs[0].id);
+function Tabs() {
+  let [activeTab, setActiveTab] = useState(tabsData[0].id);
+  let [focusedTab, setFocusedTab] = useState<string | null>(tabsData[0].id);
 
   return (
     <ExampleWrapper>
@@ -22,8 +22,8 @@ function Page() {
         className="flex space-x-1 h-fit m-auto"
         onMouseLeave={() => setFocusedTab(null)}
       >
-        {tabs.map((tab) => (
-          <button
+        {tabsData.map((tab) => (
+          <div //avoid button autofocus event, effects home page 
             key={tab.id}
             onMouseOver={() => setFocusedTab(tab.id)}
             onClick={() => setActiveTab(tab.id)}
@@ -31,7 +31,7 @@ function Page() {
               focusedTab === tab.id || activeTab === tab.id
                 ? "text-white"
                 : "hover:text-white/60 text-[#807E80]"
-            } relative rounded-full px-3 py-2 text-sm font-medium  transition focus-visible:outline-2`}
+            } relative rounded-full px-3 py-2 text-sm font-medium transition focus-visible:outline-2 cursor-pointer`}
             style={{
               WebkitTapHighlightColor: "transparent",
             }}
@@ -54,11 +54,11 @@ function Page() {
             )}
 
             <div className="relative z-50">{tab.label}</div>
-          </button>
+          </div>
         ))}
       </div>
     </ExampleWrapper>
   );
 }
 
-export default Page;
+export default Tabs;

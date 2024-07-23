@@ -7,14 +7,14 @@ import { ArrowUpFromLine } from "lucide-react";
 import { useState } from "react";
 import { Drawer } from "vaul";
 
-const Page = () => {
+const CustomDrawer = () => {
   const [container, setContainer] = useState<HTMLDivElement | null>(null);
   const [isContentLoading, setIsContentLoading] = useState(true);
 
   return (
-    <ExampleWrapper styles="p-0 lg:w-fit lg:mt-4">
+    <ExampleWrapper styles="p-0 lg:min-w-[230px]">
       <div
-        className="flex m-auto overflow-clip relative lg:h-[812px] lg:w-[375px]"
+        className="flex m-auto overflow-clip relative lg:h-[450px] w-full"
         ref={setContainer}
       >
         <div className="m-auto">
@@ -32,7 +32,7 @@ const Page = () => {
             <Drawer.Portal container={container}>
               <Drawer.Overlay />
               <Drawer.Content
-                className={`flex flex-col bottom-0 left-0 right-0 rounded-t-[10px] bg-gray-100 dark:bg-neutral-900 pt-1 px-2 h-[500px] outline-none z-[9999] fixed lg:absolute`}
+                className={`flex flex-col bottom-0 left-0 right-0 rounded-t-[10px] bg-gray-100 dark:bg-neutral-900 pt-1 px-2 h-[500px] lg:h-[250px] outline-none z-[9999] fixed lg:absolute`}
                 style={{
                   paddingBottom: "env(safe-area-inset-bottom)",
                 }}
@@ -51,4 +51,4 @@ const Page = () => {
     </ExampleWrapper>
   );
 };
-export default Page;
+export default CustomDrawer;
