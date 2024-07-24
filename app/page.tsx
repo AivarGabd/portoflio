@@ -7,7 +7,7 @@ import ThemeButton from "@/components/home-page/examples/ThemeButton";
 import StateManagersBadgesBlock from "@/components/home-page/StateManagersBadgesBlock";
 import UIBadgesBlock from "@/components/home-page/UIBadgesBlock";
 import { Avatar, Chip } from "@nextui-org/react";
-import { MoveUpRight } from "lucide-react";
+import { ExternalLink, MoveUpRight } from "lucide-react";
 import Link from "next/link";
 import {
   Accordion,
@@ -15,7 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import BottomLink from "@/components/home-page/BottomLink";
+
 
 const UIExamples = [
   {
@@ -79,6 +79,44 @@ export default function Home() {
           <div>Одержим тем, как продукт выглядит и как он ощущается</div>
         </div>
 
+        <div className=" flex flex-col gap-3">
+          <h2 className="text-lg font-medium">Проекты</h2>
+          <Link
+            href={"https://ideaparallels.vercel.app/"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div className="hover:bg-focus rounded-md px-1 py-3 relative group">
+              <div>ideaparallels</div>
+              <div className="text-light-grey text-sm">
+                Платформа для углубления в образовательный контент, без
+                алгоритмов и AI
+              </div>
+              <ExternalLink
+                size={20}
+                className="absolute top-[-10px] right-[-10px] opacity-0 group-hover:opacity-100 transition-all "
+              />
+            </div>
+          </Link>
+
+          <Link
+            href={"https://malwand.vercel.app/"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div className="hover:bg-focus rounded-md px-1 py-3 relative group">
+              <div>malwand</div>
+              <div className="text-light-grey text-sm">
+                Табличный вид для персонального листа в MyAnimeList
+              </div>
+              <ExternalLink
+                size={20}
+                className="absolute top-[-10px] right-[-10px] opacity-0 group-hover:opacity-100 transition-all "
+              />
+            </div>
+          </Link>
+        </div>
+
         <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">UI</h2>
           <Accordion type="single" collapsible className="w-full ">
@@ -101,32 +139,19 @@ export default function Home() {
             ))}
           </Accordion>
         </div>
-
-        <div className=" flex flex-col gap-3">
-          <h2 className="text-lg font-medium">Проекты</h2>
-          <Link href={"https://ideaparallels.vercel.app/"}>
-            <div className="hover:bg-focus rounded-md px-1 py-3">
-              <div>ideaparallels</div>
-              <div className="text-light-grey text-sm">
-                Платформа для углубления в образовательный контент, без алгоритмов и AI
-              </div>
-            </div>
-          </Link>
-
-          <Link href={"https://malwand.vercel.app/"}>
-            <div className="hover:bg-focus rounded-md px-1 py-3">
-              <div>malwand</div>
-              <div className="text-light-grey text-sm">
-                Табличный вид для персонального листа в MyAnimeList
-              </div>
-            </div>
-          </Link>
-        </div>
       </div>
 
       <div>
         <div className="mr-0 ml-auto inline-flex flex-row gap-2 text-light-grey text-right mt-[100px] text-sm">
-          <BottomLink />
+          <Link
+            href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+          >
+            Собираю приложения с 19 лет
+            <MoveUpRight size={14} className="inline" />
+          </Link>
           <div>aivargabd@gmail.com</div>
         </div>
       </div>
