@@ -17,6 +17,13 @@ const StateManagersBadgesBlock = () => (
     >
       zustand
     </Chip>
+    <Chip
+      variant="flat"
+      size="sm"
+      avatar={<Avatar name="mobx " src="/home-page/mobx.png" />}
+    >
+      mobx
+    </Chip>
   </>
 );
 
