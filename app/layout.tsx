@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { NextUIProvider } from "@nextui-org/react";
 import { headers } from "next/headers";
 import { userAgent } from "next/server";
 import LayoutClient from "./layoutClient";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +43,7 @@ export default function RootLayout({
             <main className="max-w-[644px] pt-12 mx-auto px-2">{children}</main>
           </NextUIProvider>
         </LayoutClient>
+        <Analytics />
       </body>
     </html>
   );
