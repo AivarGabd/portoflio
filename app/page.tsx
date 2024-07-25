@@ -16,7 +16,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-
 const UIExamples = [
   {
     name: "Интерактивный список",
@@ -79,6 +78,29 @@ export default function Home() {
           <div>Одержим тем, как продукт выглядит и как он ощущается</div>
         </div>
 
+        <div className="flex flex-col gap-3">
+          <h2 className="text-lg font-medium">UI</h2>
+          <Accordion type="single" collapsible className="w-full ">
+            {UIExamples.map((item, index) => (
+              <AccordionItem
+                value={`item-${index}`}
+                key={`item-${index}`}
+                className="hover:bg-focus rounded-md px-1 border-none"
+              >
+                <AccordionTrigger className="hover:no-underline font-normal">
+                  <div className="flex flex-col gap-0 text-left">
+                    <div className="text-base no-underline">{item.name}</div>
+                    <div className=" text-light-grey text-sm">{item.text}</div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="w-full flex">
+                  <div className="m-auto">{item.component}</div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
         <div className=" flex flex-col gap-3">
           <h2 className="text-lg font-medium">Последние проекты</h2>
           <Link
@@ -115,29 +137,6 @@ export default function Home() {
               />
             </div>
           </Link>
-        </div>
-
-        <div className="flex flex-col gap-3">
-          <h2 className="text-lg font-medium">UI</h2>
-          <Accordion type="single" collapsible className="w-full ">
-            {UIExamples.map((item, index) => (
-              <AccordionItem
-                value={`item-${index}`}
-                key={`item-${index}`}
-                className="hover:bg-focus rounded-md px-1 border-none"
-              >
-                <AccordionTrigger className="hover:no-underline font-normal">
-                  <div className="flex flex-col gap-0 text-left">
-                    <div className="text-base no-underline">{item.name}</div>
-                    <div className=" text-light-grey text-sm">{item.text}</div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="w-full flex">
-                  <div className="m-auto">{item.component}</div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
         </div>
       </div>
 
