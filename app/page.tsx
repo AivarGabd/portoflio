@@ -80,7 +80,7 @@ export default function Home() {
         </div>
 
         <div className=" flex flex-col gap-3">
-          <h2 className="text-lg font-medium">Проекты</h2>
+          <h2 className="text-lg font-medium">Последние проекты</h2>
           <Link
             href={"https://ideaparallels.vercel.app/"}
             rel="noopener noreferrer"
