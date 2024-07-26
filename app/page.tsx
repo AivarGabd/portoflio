@@ -98,6 +98,20 @@ export default function Home() {
           </div>
         </div> */}
 
+        <div className="flex flex-col gap-1">
+          <div>Опыт разработки и построенние web React приложеий с нуля</div>
+          <div>
+            Участие в проработке архитектуры напрямую с продукт менеджером
+          </div>
+          <div>Опыт в коммерческой разработке</div>
+          <div>Опыт работе в комманде с разными часовыми поясами</div>
+          <div>
+            Понимание принципов построения качественных приложений (архитектура,
+            стабильность, производительность, UI/UX)
+          </div>
+          <div>Опыт работы с облаками AWS, Azure, Heroku, Yandex Cloud</div>
+        </div>
+
         <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">UI</h2>
           <Accordion type="single" collapsible className="w-full ">
