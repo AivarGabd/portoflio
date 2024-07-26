@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        {/* <div className="flex flex-col gap-1.5">
           <div>
             <Link
               href="https://ideaparallels.vercel.app/"
@@ -96,7 +96,7 @@ export default function Home() {
             </Link>{" "}
             - небольшой проект для отдыха построенный вокруг MyAnimeList API.
           </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">UI</h2>
