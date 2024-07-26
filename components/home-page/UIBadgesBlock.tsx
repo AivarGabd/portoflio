@@ -20,6 +20,13 @@ const UIBadgesBlock = () => (
     >
       next ui
     </Chip>
+
+    <Chip
+      variant="flat"
+      avatar={<Avatar name="d3js" src="/home-page/d3.png" />}
+    >
+      d3js
+    </Chip>
   </>
 );
 

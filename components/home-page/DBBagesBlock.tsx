@@ -5,6 +5,13 @@ const DBBagesBlock = () => {
     <>
       <Chip
         variant="flat"
+        avatar={<Avatar name="expressjs" src="/home-page/express.png" />}
+      >
+        expressjs
+      </Chip>
+
+      <Chip
+        variant="flat"
         avatar={<Avatar name="firebase" src="/home-page/firebase.png" />}
       >
         firebase
