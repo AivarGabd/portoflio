@@ -188,7 +188,7 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Табличный вид для персонального листа в MyAnimeList
+                Табличный вид для персонального листа в MyAnimeList используя их API
               </div>
               <ExternalLink
                 size={20}
@@ -201,15 +201,7 @@ export default function Home() {
 
       <div>
         <div className="mr-0 ml-auto inline-flex flex-row gap-2 text-light-grey text-right mt-[100px] text-sm">
-          <Link
-            href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
-          >
-            Собираю приложения с 19 лет
-            <MoveUpRight size={14} className="inline" />
-          </Link>
+         
           <div>aivargabd@gmail.com</div>
         </div>
       </div>
