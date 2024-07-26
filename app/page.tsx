@@ -47,7 +47,7 @@ const UIExamples = [
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col gap-[100px]">
+      <div className="flex flex-col gap-[100px] mt-20">
         <div className=" flex flex-col gap-2">
           <div className="w-full flex">
             <div className="w-fit">
@@ -56,10 +56,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap">
+          <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap ">
             <Chip
               variant="flat"
-              size="sm"
               avatar={<Avatar name="nextjs" src="/home-page/nextjs.png" />}
             >
               nextjs
@@ -70,15 +69,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1.5">
+        {/* <div className="flex flex-col gap-1.5">
           <div>
             Я превращаю идеи в современные и комфортные продукты которые полюбят
             пользователи
           </div>
           <div>Одержим тем, как продукт выглядит и как он ощущается</div>
-        </div>
+        </div> */}
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mt-6">
           <h2 className="text-lg font-medium">UI</h2>
           <Accordion type="single" collapsible className="w-full ">
             {UIExamples.map((item, index) => (

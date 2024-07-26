@@ -4,7 +4,6 @@ const StateManagersBadgesBlock = () => (
   <>
     <Chip
       variant="flat"
-      size="sm"
       avatar={<Avatar name="Redux" src="/home-page/redux.webp" />}
     >
       redux
@@ -12,14 +11,12 @@ const StateManagersBadgesBlock = () => (
 
     <Chip
       variant="flat"
-      size="sm"
       avatar={<Avatar name="zustand " src="/home-page/zustand.png" />}
     >
       zustand
     </Chip>
     <Chip
       variant="flat"
-      size="sm"
       avatar={<Avatar name="mobx " src="/home-page/mobx.png" />}
     >
       mobx
