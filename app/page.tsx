@@ -100,9 +100,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-1">
           <div>Опыт разработки и построении web React приложений с нуля</div>
-          <div>
-            Участие в проработке архитектуры
-          </div>
+          <div>Участие в проработке архитектуры</div>
           <div>Опыт в коммерческой разработке</div>
           <div>Опыт работе в команде с разными часовыми поясами</div>
           <div>
@@ -110,7 +108,6 @@ export default function Home() {
             стабильность, производительность, UI/UX)
           </div>
           <div>Опыт работы с облаками AWS, Azure, Heroku, Yandex Cloud</div>
-   
 
           <div className=" text-light-grey mt-[20px]">
             <Link
@@ -119,8 +116,8 @@ export default function Home() {
               target="_blank"
               className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
             >
-              Программирование и посторонние приложений является главными увлечением с 19 лет
-              
+              Программирование и посторонние приложений является главными
+              увлечением с 19 лет<MoveUpRight size={14} className="inline" />
             </Link>
           </div>
         </div>
@@ -188,7 +185,8 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Табличный вид для персонального листа в MyAnimeList используя их API
+                Табличный вид для персонального листа в MyAnimeList используя их
+                API
               </div>
               <ExternalLink
                 size={20}
@@ -201,7 +199,15 @@ export default function Home() {
 
       <div>
         <div className="mr-0 ml-auto inline-flex flex-row gap-2 text-light-grey text-right mt-[100px] text-sm">
-         
+          {/** <Link
+            href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+          >
+            Собираю приложения с 19 лет
+            <MoveUpRight size={14} className="inline" />
+          </Link> */}
           <div>aivargabd@gmail.com</div>
         </div>
       </div>
