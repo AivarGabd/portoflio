@@ -56,7 +56,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap ">
+          <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap">
             <Chip
               variant="flat"
               avatar={<Avatar name="nextjs" src="/home-page/nextjs.png" />}
@@ -69,15 +69,36 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1.5">
           <div>
-            Я превращаю идеи в современные и комфортные продукты которые полюбят
-            пользователи
+            <Link
+              href="https://ideaparallels.vercel.app/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+            >
+              ideaparallels
+              <MoveUpRight size={14} className="inline text-light-grey" />
+            </Link>{" "}
+            - проект ради которого я дропнулся с университета, развивал
+            последние 3,5 года, после написания кучи бесполезного функционала
+            пока остался лендинг.
           </div>
-          <div>Одержим тем, как продукт выглядит и как он ощущается</div>
-        </div> */}
+          <div>
+            <Link
+              href="https://malwand.vercel.app/"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+            >
+              malwand
+              <MoveUpRight size={14} className="inline text-light-grey" />
+            </Link>{" "}
+            - небольшой проект для отдыха построенный вокруг MyAnimeList API.
+          </div>
+        </div>
 
-        <div className="flex flex-col gap-3 mt-6">
+        <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">UI</h2>
           <Accordion type="single" collapsible className="w-full ">
             {UIExamples.map((item, index) => (
@@ -108,14 +129,20 @@ export default function Home() {
             target="_blank"
           >
             <div className="hover:bg-focus rounded-md px-1 py-3 relative group">
-              <div>ideaparallels</div>
+              <div>
+                ideaparallels{" "}
+                <ExternalLink
+                  size={16}
+                  className=" inline mt-[-6px] lg:invisible"
+                />{" "}
+              </div>
               <div className="text-light-grey text-sm">
                 Платформа для углубления в образовательный контент, без
                 алгоритмов и AI
               </div>
               <ExternalLink
                 size={20}
-                className="absolute top-[-10px] right-[-10px] opacity-0 group-hover:opacity-100 transition-all "
+                className="absolute top-[-10px] right-[-10px] opacity-0 lg:group-hover:opacity-100 transition-all "
               />
             </div>
           </Link>
@@ -126,13 +153,19 @@ export default function Home() {
             target="_blank"
           >
             <div className="hover:bg-focus rounded-md px-1 py-3 relative group">
-              <div>malwand</div>
+              <div>
+                malwand{" "}
+                <ExternalLink
+                  size={16}
+                  className=" inline mt-[-6px] lg:invisible"
+                />{" "}
+              </div>
               <div className="text-light-grey text-sm">
                 Табличный вид для персонального листа в MyAnimeList
               </div>
               <ExternalLink
                 size={20}
-                className="absolute top-[-10px] right-[-10px] opacity-0 group-hover:opacity-100 transition-all "
+                className="absolute top-[-10px] right-[-10px] opacity-0 lg:group-hover:opacity-100 transition-all "
               />
             </div>
           </Link>
