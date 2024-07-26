@@ -116,8 +116,9 @@ export default function Home() {
               target="_blank"
               className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
             >
-              Программирование и посторонние приложений является главными
-              увлечением с 19 лет<MoveUpRight size={14} className="inline" />
+              Программирование и приложений является главными увлечением с 19
+              лет
+              <MoveUpRight size={14} className="inline" />
             </Link>
           </div>
         </div>
