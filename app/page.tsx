@@ -101,7 +101,7 @@ export default function Home() {
         <div className="flex flex-col gap-1">
           <div>Опыт разработки и построенние web React приложеий с нуля</div>
           <div>
-            Участие в проработке архитектуры напрямую с продукт менеджером
+            Участие в проработке архитектуры
           </div>
           <div>Опыт в коммерческой разработке</div>
           <div>Опыт работе в комманде с разными часовыми поясами</div>
@@ -110,6 +110,18 @@ export default function Home() {
             стабильность, производительность, UI/UX)
           </div>
           <div>Опыт работы с облаками AWS, Azure, Heroku, Yandex Cloud</div>
+
+          <div className=" text-light-grey mt-[20px]">
+            <Link
+              href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="underline decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+            >
+              Программирование и посторонние приложений является главными увлечением с 19 лет
+              
+            </Link>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3">
