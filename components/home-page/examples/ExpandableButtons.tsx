@@ -18,6 +18,7 @@ const animals = [
 
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { useIsMobile } from "@/lib/useIsMobile";
+import { delay } from "@/lib/utils";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsUpDown, Search, User } from "lucide-react";
@@ -46,6 +47,24 @@ const ExpandableButtons = () => {
       setIsOverlayOpen(false);
     }
   }, [isSelectorExpanded, isInputExpanded, isButtonExpanded]);
+
+  useEffect(() => {
+    setInterval(async () => {
+      setSelectorOpen(false);
+      setIsSelectorExpanded(false);
+      setIsButtonExpanded(false);
+      setIsInputExpanded(true);
+      await delay(500);
+      setIsButtonExpanded(false);
+      setIsInputExpanded(false);
+      setIsSelectorExpanded(true);
+      await delay(1000);
+      setIsInputExpanded(false);
+      setSelectorOpen(false);
+      setIsSelectorExpanded(false);
+      setIsButtonExpanded(true);
+    }, 2500);
+  }, []);
 
   return (
     <>
@@ -152,15 +171,15 @@ const ExpandableButtons = () => {
         </div>
       </ExampleWrapper>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {isOverlayOpen && (
           <motion.div
             key="overlay"
-            className="fixed inset-0 z-40"
+            className="fixed inset-0 z-40 bg-gray-500"
             onClick={clickAwayListener}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   );
 };

@@ -4,15 +4,17 @@ import ExampleWrapper from "@/components/ExampleWrapper";
 import { delay } from "@/lib/utils";
 import { Button, Spinner } from "@nextui-org/react";
 import { ArrowUpFromLine } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Drawer } from "vaul";
 
 const CustomDrawer = () => {
   const [container, setContainer] = useState<HTMLDivElement | null>(null);
   const [isContentLoading, setIsContentLoading] = useState(true);
 
+
+
   return (
-    <ExampleWrapper styles="p-0 lg:min-w-[230px]">
+    <ExampleWrapper styles="p-0 lg:max-w-[230px]">
       <div
         className="flex m-auto overflow-clip relative lg:h-[450px] w-full"
         ref={setContainer}
@@ -20,8 +22,8 @@ const CustomDrawer = () => {
         <div className="m-auto">
           <Drawer.Root
             onOpenChange={async (e) => {
-                await delay(500)
-                setIsContentLoading(!e)
+              await delay(500);
+              setIsContentLoading(!e);
             }}
           >
             <Drawer.Trigger asChild>
@@ -37,9 +39,9 @@ const CustomDrawer = () => {
                   paddingBottom: "env(safe-area-inset-bottom)",
                 }}
               >
-                 <Drawer.Handle className="bg-gray-200 mt-2" />
+                <Drawer.Handle className="bg-gray-200 mt-2" />
                 {isContentLoading ? (
-                  <Spinner className="m-auto" color="default" size='lg'/>
+                  <Spinner className="m-auto" color="default" size="lg" />
                 ) : (
                   <div className="m-auto text-xl font-medium">Hello?</div>
                 )}

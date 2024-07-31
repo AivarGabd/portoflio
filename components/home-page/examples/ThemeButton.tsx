@@ -3,7 +3,7 @@
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const sunPaths = [
   "M12 3v1",
@@ -19,11 +19,22 @@ const sunPaths = [
 const ThemeButton = () => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
 
-  
+
+  useEffect(()=>{
+
+    setInterval(()=>{
+      setTheme(prev=>prev=='dark'?'light':'dark')
+    },3000)
+
+  },[])
+
+
   return (
     <ExampleWrapper
       styles={`${theme=='light'?'bg-[#DFDFD6] light':"bg-black dark"}`}
     >
+
+  
       <div className="m-auto">
         <Button
           size="lg"

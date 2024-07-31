@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ExampleWrapper from "@/components/ExampleWrapper";
+import { delay, getRandomInt } from "@/lib/utils";
 
 export type itemType = {
   id: string;
@@ -62,6 +63,7 @@ const Item = ({
       className="group flex w-[340px] lg:w-[450px] cursor-pointer items-center gap-4 px-2"
       onClick={() => itemSelectEvent(data)}
       layoutId={data.id}
+      id={data.id}
     >
       <motion.img
         height="56"
@@ -108,16 +110,8 @@ const DesktopDialogWindow = ({
   <AnimatePresence>
     {selectedItem && (
       <motion.div
-        key="overlay"
-        className="fixed inset-0 z-50 bg-transparent"
-        onClick={clickAwayListener}
-      />
-    )}
-
-    {selectedItem && (
-      <motion.div
         layoutId={selectedItem?.id}
-        className="w-[92%] lg:w-[500px] h-[170px] m-auto absolute inset-0 z-80"
+        className="w-[92%] lg:w-[480px] h-[170px] m-auto absolute inset-0 z-80"
       >
         <div
           className=" w-full p-4 flex flex-col gap-2 rounded-md"
@@ -168,26 +162,61 @@ const DesktopDialogWindow = ({
 const List = () => {
   const [selectedItem, setSelectedItem] = useState<itemType | null>(null);
   const itemSelectEvent = (newItem: itemType) => {
-    setSelectedItem(newItem);
+    //setIsMouseIn(true);
+    //setSelectedItem(newItem);
   };
 
   const clickAwayListener = () => {
+    setIsMouseIn(false);
     setSelectedItem(null);
   };
 
+  const [runInterval, setRunInterval] = useState(true);
+  const intervalRef = useRef<null | ReturnType<typeof setTimeout>>(null);
+
+  useEffect(() => {
+    if (runInterval) {
+      intervalRef.current = setInterval(() => {
+        clickAwayListener();
+        setTimeout(() => {
+          setSelectedItem(array[getRandomInt(array.length)]);
+        }, 1000);
+      }, 2000);
+    }
+
+    return () => {
+      clearInterval(intervalRef.current!);
+    };
+  }, [runInterval]);
+
+  const [isMouseIn, setIsMouseIn] = useState(false);
+
   return (
-    <ExampleWrapper>
-      <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
-        <div className="relative flex w-full flex-col items-center lg:px-2">
-          {array.map((item) => (
-            <Item
-              key={item.title}
-              data={item}
-              itemSelectEvent={itemSelectEvent}
-            />
-          ))}
+    <ExampleWrapper styles="p-0">
+      <div className="w-full h-full px-4 py-6">
+        <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
+          <div className="relative flex w-full flex-col items-center lg:px-2">
+            {array.map((item) => (
+              <Item
+                key={item.title}
+                data={item}
+                itemSelectEvent={itemSelectEvent}
+              />
+            ))}
+          </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedItem && isMouseIn && (
+          <motion.div
+            key="overlay"
+            className="fixed inset-0 z-50 bg-transparent"
+            onClick={clickAwayListener}
+          />
+        )}
+      </AnimatePresence>
+
       <DesktopDialogWindow
         selectedItem={selectedItem}
         clickAwayListener={clickAwayListener}
