@@ -6,19 +6,80 @@ import Tabs from "@/components/home-page/examples/Tabs";
 import ThemeButton from "@/components/home-page/examples/ThemeButton";
 import CustomProgressBar from "./examples/ProgressBar";
 import { useState } from "react";
-import { Drawer } from "vaul";
 import { Button } from "@nextui-org/react";
 import { Info } from "lucide-react";
 import Projects from "./Projects";
+import { useIsMobile } from "@/lib/useIsMobile";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+type UIExampleType = {
+  name: string;
+  text: string | null;
+  component: JSX.Element;
+};
+
+const UIExamples: UIExampleType[] = [
+  {
+    name: "Интерактивный список",
+    text: "С анимацией открытия как в IOS",
+    component: <List />,
+  },
+  {
+    name: "Табы",
+    text: "С анимацией как в vercel.com/dashboard",
+    component: <Tabs />,
+  },
+
+  {
+    name: "Компактные интерактивные элементы",
+    text: "Расширяющиеся кликабельные элементы для мобильных устройств",
+    component: <ExpandableButtons />,
+  },
+  {
+    name: "Шторка снизу",
+    text: "Перетаскиваемая нижняя шторка для мобильных устройств",
+    component: <CustomDrawer />,
+  },
+  {
+    name: "Кнопка для смены светлой/темной тем",
+    text: "Почти как у joshwcomeau.com",
+    component: <ThemeButton />,
+  },
+  {
+    name: "Прогресс бар с фокусировкой",
+    text: null,
+    component: <CustomProgressBar />,
+  },
+];
+
+const UIContentWraper = (item: UIExampleType) => (
+  <div className="bg-[#151514] border border-neutral-800  rounded-md flex flex-col gap-2 h-fit mx-1 w-fit">
+   
+    <div className="w-full border-b border-neutral-800 ">{item.component}</div>
+    <div className="px-3 pb-1">
+      <div className="text-base no-underline">{item.name}</div>
+      <div className=" text-light-grey text-sm">
+        {item.text ? item.text : <>&#8203;</>}
+      </div>
+    </div>
+  </div>
+);
 
 const Content = () => {
-  const [activeBlock, setActiveBlock] = useState<"ui" | "projects">("ui");
+  const isMobile = useIsMobile();
+
+  const [activeBlock, setActiveBlock] = useState<"ui" | "projects">("projects");
 
   const activeStyles = "border-b-2 border-white";
   const nonActiveStyles = "border-b-2 border-transparent";
   return (
     <>
-      <div className="container flex flex-row gap-5 text-xl font-medium mt-[100px]">
+      <div className="lg:container flex flex-row gap-5 text-xl font-medium mt-[100px]">
         <div
           className={`h-full px-1.5 ${
             activeBlock == "ui" ? activeStyles : nonActiveStyles
@@ -38,84 +99,44 @@ const Content = () => {
           </button>
         </div>
       </div>
-
-      <div className="w-full border-t border-[#27272A] bg-black mx-0">
-        <div className="lg:container mt-4">
+      <div className="w-full bg-black mx-0 pt-4">
+        <div className="mt-4">
           {activeBlock == "ui" ? (
-            <div className=" flex flex-wrap gap-1">
-              <div className="bg-neutral-900 rounded-xl py-1 px-2 flex flex-col gap-2 h-fit w-full mx-1">
-                <div className="px-2 pt-1">
-                  <div className="text-base no-underline">
-                    Интерактивный список
-                  </div>
-                  <div className=" text-light-grey text-sm">
-                    С анимацией открытия как в IOS
-                  </div>
-                </div>
-               <div className="m-auto">
-               <List />
-               </div>
-              </div>
-              <div className="flex flex-col gap-1">
-                <div className="bg-neutral-900 rounded-xl py-1 px-2 flex flex-col gap-2 h-fit">
-                  <div className="px-2 pt-1">
-                    <div className="text-base no-underline">Табы</div>
-                    <div className="text-light-grey text-sm">
-                      С анимацией как в vercel.com/dashboard
-                    </div>
-                  </div>
-                  <Tabs />
-                </div>
-                <div className="bg-neutral-900 rounded-xl py-1 px-2 flex flex-col gap-2 h-fit">
-                  <div className="px-2 pt-1">
-                    <div className="text-base no-underline">
-                      Компактные интерактивные элементы
-                    </div>
-                    <div className="text-light-grey text-sm">
-                      Расширяющиеся кликабельные элементы для мобильных
-                      устройств
-                    </div>
-                  </div>
-                  <ExpandableButtons />
-                </div>
-              </div>
-              <div className="bg-neutral-900 rounded-xl py-1 px-2 flex flex-col gap-2 h-fit">
-                <div className="px-2 pt-1">
-                  <div className="text-base no-underline">Шторка снизу</div>
-                  <div className="text-light-grey text-sm">
-                    Перетаскиваемая нижняя шторка для мобильных устройств
-                  </div>
-                </div>
-                <div className="mx-auto">
-                  <CustomDrawer />
-                </div>
-              </div>
-              <div className="bg-neutral-900 rounded-xl py-1 px-2 flex flex-col gap-2 h-fit">
-                <div className="px-2 pt-1">
-                  <div className="text-base no-underline">
-                    Кнопка для смены светлой/темной тем
-                  </div>
-                  <div className="text-light-grey text-sm">
-                    Почти как у joshwcomeau.com
-                  </div>
-                </div>
-                <div className="mx-auto">
-                  <ThemeButton />
-                </div>
-              </div>
-              <div className="bg-neutral-900 rounded-xl py-1 px-2 flex flex-col gap-2 h-fit">
-                <div className="px-2 pt-1">
-                  <div className="text-base no-underline">
-                    Прогресс-бар с фокусировкой
-                  </div>
-                </div>
-                <CustomProgressBar />
-              </div>
+            <div className="lg:px-4 flex flex-wrap gap-0.5 gap-y-2 pb-[200px] lg:max-w-[1800px] mx-auto">
+              {isMobile ? (
+                <Accordion type="single" collapsible className="w-full bg-neutral-900 rounded-md">
+                  {UIExamples.map((item, index) => (
+                    <AccordionItem
+                      value={`item-${index}`}
+                      key={`item-${index}`}
+                      className="hover:bg-focus rounded-md px-1 border-none no-underline"
+                    >
+                      <AccordionTrigger className="font-normal">
+                        <div className="flex flex-col gap-0 text-left">
+                          <div className="text-base no-underline">
+                            {item.name}
+                          </div>
+                          <div className=" text-light-grey text-sm">
+                            {item.text}
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="w-full flex">
+                        <div className="m-auto">{item.component}</div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              ) : (
+                <>
+                  {UIExamples.map((x) => (
+                    <UIContentWraper {...x} />
+                  ))}
+                </>
+              )}
             </div>
           ) : (
-            <>
-            <Projects/>
-            </>
+            <Projects />
           )}
         </div>
       </div>

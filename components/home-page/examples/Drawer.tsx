@@ -14,9 +14,9 @@ const CustomDrawer = () => {
 
 
   return (
-    <ExampleWrapper styles="p-0 lg:max-w-[230px]">
+    <ExampleWrapper styles="p-0">
       <div
-        className="flex m-auto overflow-clip relative lg:h-[450px] w-full"
+        className="flex m-auto overflow-clip relative h-full w-full lg:max-w-[230px] min-h-[300px]"
         ref={setContainer}
       >
         <div className="m-auto">
@@ -34,7 +34,7 @@ const CustomDrawer = () => {
             <Drawer.Portal container={container}>
               <Drawer.Overlay />
               <Drawer.Content
-                className={`flex flex-col bottom-0 left-0 right-0 rounded-t-[10px] bg-gray-100 dark:bg-neutral-900 pt-1 px-2 h-[500px] lg:h-[250px] outline-none z-[9999] fixed lg:absolute`}
+                className={`flex flex-col bottom-0 left-0 right-0 rounded-t-[10px] bg-gray-100 dark:bg-neutral-900 pt-1 px-2 h-[500px] lg:h-[160px] outline-none z-[9999] fixed lg:absolute`}
                 style={{
                   paddingBottom: "env(safe-area-inset-bottom)",
                 }}
@@ -43,7 +43,7 @@ const CustomDrawer = () => {
                 {isContentLoading ? (
                   <Spinner className="m-auto" color="default" size="lg" />
                 ) : (
-                  <div className="m-auto text-xl font-medium">Hello?</div>
+                  <div className="m-auto text-xl font-medium">📞 Hello?</div>
                 )}
               </Drawer.Content>
             </Drawer.Portal>

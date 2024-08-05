@@ -3,17 +3,7 @@
 const animals = [
   { key: "cat", label: "Cat" },
   { key: "dog", label: "Dog" },
-  { key: "elephant", label: "Elephant" },
-  { key: "lion", label: "Lion" },
-  { key: "tiger", label: "Tiger" },
-  { key: "giraffe", label: "Giraffe" },
-  { key: "dolphin", label: "Dolphin" },
-  { key: "penguin", label: "Penguin" },
-  { key: "zebra", label: "Zebra" },
-  { key: "shark", label: "Shark" },
-  { key: "whale", label: "Whale" },
-  { key: "otter", label: "Otter" },
-  { key: "crocodile", label: "Crocodile" },
+  { key: "elephant", label: "Elephant" }
 ];
 
 import ExampleWrapper from "@/components/ExampleWrapper";
@@ -48,21 +38,26 @@ const ExpandableButtons = () => {
     }
   }, [isSelectorExpanded, isInputExpanded, isButtonExpanded]);
 
+  const runDemoAnimation = async () => {
+    setSelectorOpen(false);
+    setIsSelectorExpanded(false);
+    setIsButtonExpanded(false);
+    setIsInputExpanded(true);
+    await delay(500);
+    setIsButtonExpanded(false);
+    setIsInputExpanded(false);
+    setIsSelectorExpanded(true);
+    await delay(1000);
+    setIsInputExpanded(false);
+    setSelectorOpen(false);
+    setIsSelectorExpanded(false);
+    setIsButtonExpanded(true);
+  };
+
   useEffect(() => {
-    setInterval(async () => {
-      setSelectorOpen(false);
-      setIsSelectorExpanded(false);
-      setIsButtonExpanded(false);
-      setIsInputExpanded(true);
-      await delay(500);
-      setIsButtonExpanded(false);
-      setIsInputExpanded(false);
-      setIsSelectorExpanded(true);
-      await delay(1000);
-      setIsInputExpanded(false);
-      setSelectorOpen(false);
-      setIsSelectorExpanded(false);
-      setIsButtonExpanded(true);
+    runDemoAnimation();
+    setInterval(() => {
+      runDemoAnimation();
     }, 2500);
   }, []);
 

@@ -19,22 +19,21 @@ const sunPaths = [
 const ThemeButton = () => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
 
+  const runDemoAnimation = () => {
+    setTheme((prev) => (prev == "dark" ? "light" : "dark"));
+  };
 
-  useEffect(()=>{
-
-    setInterval(()=>{
-      setTheme(prev=>prev=='dark'?'light':'dark')
-    },3000)
-
-  },[])
-
+  useEffect(() => {
+    runDemoAnimation();
+    setInterval(() => {
+      runDemoAnimation();
+    }, 3000);
+  }, []);
 
   return (
     <ExampleWrapper
-      styles={`${theme=='light'?'bg-[#DFDFD6] light':"bg-black dark"}`}
+      styles={`${theme == "light" ? "bg-[#DFDFD6] light" : "bg-black dark"}`}
     >
-
-  
       <div className="m-auto">
         <Button
           size="lg"
@@ -60,7 +59,7 @@ const ThemeButton = () => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="lucide lucide-moon lg:scale-125"
+              className="lucide lucide-moon"
             >
               <motion.path
                 initial={{ scale: 0.5, opacity: 0.2, rotate: 100 }}
@@ -80,7 +79,7 @@ const ThemeButton = () => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="lucide lucide-sun-medium lg:scale-125"
+              className="lucide lucide-sun-medium"
             >
               <circle cx="12" cy="12" r="4" />
               {sunPaths.map((path, index) => (

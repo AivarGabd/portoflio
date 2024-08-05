@@ -10,7 +10,7 @@ import Content from "@/components/home-page/Content";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col gap-[100px] mt-20 container">
+      <div className="flex flex-col gap-[100px] mt-20 lg:container">
         <div className=" flex flex-col gap-2 max-w-[644px]">
           <div className="w-full flex">
             <div className="w-fit">
@@ -35,15 +35,15 @@ export default function Home() {
         <div className="flex flex-col gap-1">
           <div>Опыт разработки и построении web React приложений с нуля</div>
           <div>Участие в проработке архитектуры</div>
-          <div>Опыт в коммерческой разработке</div>
           <div>Опыт работе в команде с разными часовыми поясами</div>
           <div>
             Понимание принципов построения качественных приложений (архитектура,
             стабильность, производительность, UI/UX)
           </div>
           <div>Опыт работы с облаками AWS, Azure, Heroku, Yandex Cloud</div>
+          <div>Опыт работы с WebSocket(Socket IO) и  REST API</div>
 
-          <div className=" text-light-grey mt-[20px] flex flex-col gap-1">
+          <div className="text-light-grey mt-[20px] flex flex-col gap-1">
             <Link
               href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
               rel="noopener noreferrer"

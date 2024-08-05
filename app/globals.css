@@ -18,7 +18,22 @@ body {
 
 */
 
+html{
+  background-color: black !important;
+}
 
+@media (min-width: 1024px) {
+  body {
+    width: calc( 100% );
+    max-width: calc( 100vw - 1em );
+  }
+}
+
+
+
+:root {
+  color-scheme: dark;
+}
 
 
 .swiper-pagination-bullet-active {

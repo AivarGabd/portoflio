@@ -41,7 +41,20 @@ const array: itemType[] = [
     title: "Pirates in the jungle",
     description: "Find the treasure.",
     text: "You are a pirate and you have to find the treasure in the jungle. But be careful, there are traps and wild animals. Some filler text to make it longer. Maybe even longer, because it looks better.",
-  },
+  }
+
+  /**
+   * 
+   * ,
+  {
+    id: "pirates",
+    img: "/pirate.png",
+    title: "Pirates in the jungle",
+    description: "Find the treasure.",
+    text: "You are a pirate and you have to find the treasure in the jungle. But be careful, there are traps and wild animals. Some filler text to make it longer. Maybe even longer, because it looks better.",
+  }
+   * 
+   * ,
   {
     id: "mountains",
     img: "/boy.webp",
@@ -49,6 +62,7 @@ const array: itemType[] = [
     description: "Be careful.",
     text: "You are lost in the mountains and you have to find your way home. But be careful, there are dangerous animals and you can get lost",
   },
+   */
 ];
 
 const Item = ({
@@ -60,14 +74,14 @@ const Item = ({
 }) => {
   return (
     <motion.div
-      className="group flex w-[340px] lg:w-[450px] cursor-pointer items-center gap-4 px-2"
+      className="group flex w-[340px] lg:w-[400px] cursor-pointer items-center gap-4 px-2"
       onClick={() => itemSelectEvent(data)}
       layoutId={data.id}
       id={data.id}
     >
       <motion.img
-        height="56"
-        width="56"
+        height="50"
+        width="50"
         src={data.img}
         layoutId={`image-${data.id}`}
         style={{
@@ -75,7 +89,7 @@ const Item = ({
         }}
       />
       <motion.div
-        className="flex grow items-center justify-between border-b border-[#B5B3AD] group-last:border-none"
+        className="flex grow items-center justify-between border-b border-neutral-400 group-last:border-none"
         layoutId={`block-${data.id}`}
       >
         <motion.div
@@ -83,13 +97,13 @@ const Item = ({
           layoutId={`link-${data.id}`}
         >
           <motion.h2
-            className="text-sm font-medium"
+            className="text-xs font-medium"
             layoutId={`title-${data.id}`}
           >
             {data.title}
           </motion.h2>
           <motion.p
-            className="text-sm text-[#B5B3AD] font-medium"
+            className="text-xs text-[#B5B3AD] font-medium"
             layoutId={`description-${data.id}`}
           >
             {data.description}
@@ -174,13 +188,18 @@ const List = () => {
   const [runInterval, setRunInterval] = useState(true);
   const intervalRef = useRef<null | ReturnType<typeof setTimeout>>(null);
 
+  const runDemoAnimation = ()=>{
+    clickAwayListener();
+    setTimeout(() => {
+      setSelectedItem(array[getRandomInt(array.length)]);
+    }, 1000);
+  }
+
   useEffect(() => {
+    runDemoAnimation()
     if (runInterval) {
       intervalRef.current = setInterval(() => {
-        clickAwayListener();
-        setTimeout(() => {
-          setSelectedItem(array[getRandomInt(array.length)]);
-        }, 1000);
+        runDemoAnimation()
       }, 2000);
     }
 
@@ -192,8 +211,8 @@ const List = () => {
   const [isMouseIn, setIsMouseIn] = useState(false);
 
   return (
-    <ExampleWrapper styles="p-0">
-      <div className="w-full h-full px-4 py-6">
+    <ExampleWrapper styles="p-0 h-[450px]">
+      <div className="w-full px-4 py-2">
         <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
           <div className="relative flex w-full flex-col items-center lg:px-2">
             {array.map((item) => (

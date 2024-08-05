@@ -4,9 +4,7 @@ import ExampleWrapper from "@/components/ExampleWrapper";
 import { getRandomInt } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
-const blocks = ["40px", "20px", "30px", "30px", "20px", "40px"];
-
-
+const blocks = ["40px", "20px", "30px", "30px", "20px", "40px", "20px", "50px"];
 
 const CustomProgressBar = () => {
   const linksScrollbar = useRef<HTMLDivElement>(null);
@@ -15,10 +13,15 @@ const CustomProgressBar = () => {
 
   const [activeBlock, setActiveBlock] = useState<null | Element>(null);
 
+  const runDemoAnimation = () => {
+    setActiveBlock(linksBlock.current!.children[getRandomInt(blocks.length)]);
+  };
+
   useEffect(() => {
     if (!linksBlock.current) return;
+    runDemoAnimation();
     setInterval(() => {
-      setActiveBlock(linksBlock.current!.children[getRandomInt(blocks.length)]);
+      runDemoAnimation();
     }, 2000);
   }, []);
 
@@ -38,7 +41,7 @@ const CustomProgressBar = () => {
   return (
     <ExampleWrapper styles="flex max-w-[250px]">
       <div className="flex flex-col gap-1 relative w-[200px]" ref={linksBlock}>
-        {blocks.map((x,index) => (
+        {blocks.map((x, index) => (
           <div
             key={x}
             id={`${index}-${x}`}
@@ -56,7 +59,7 @@ const CustomProgressBar = () => {
         ))}
       </div>
 
-      <div className="h-[200px] w-[10px] flex ml-[10px] mr-0 relative">
+      <div className="h-[250px] w-[10px] flex ml-[10px] mr-0 relative">
         <div className="h-full w-1 bg-[#575453] mx-auto rounded-md"></div>
         <div
           ref={linksScrollbarBg}
