@@ -54,7 +54,7 @@ const arr: projectItem[] = [
             </div>
 
             <div className={eachBlockStyles}>
-              <div className="w-[800px] h-[511.469px] bg-white">
+              <div className="w-[800px] h-[511.469px] bg-white  mx-auto">
                 <video
                   className="rounded-lg m-auto"
                   src="/home-page/projects-demo/dazygoods/email.mp4"
@@ -72,7 +72,7 @@ const arr: projectItem[] = [
             </div>
 
             <div className={eachBlockStyles}>
-              <div className="w-[800px] h-[459.562px] bg-white">
+              <div className="w-[800px] h-[459.562px] bg-white  mx-auto">
                 <video
                   className="m-auto"
                   width={800}
@@ -91,7 +91,7 @@ const arr: projectItem[] = [
             </div>
 
             <div className={eachBlockStyles}>
-              <div className="w-[1336px] h-[540.891px] bg-white">
+              <div className="w-[1336px] h-[540.891px] bg-white mx-auto">
                 <video
                   src="/home-page/projects-demo/dazygoods/gorki3.mp4"
                   controls={false}
@@ -248,7 +248,7 @@ const arr: projectItem[] = [
         </div>
 
         <div className={blockMainContentStyles}>
-          <div>
+          <div className="w-[800px] h-[586.734px] mx-auto bg-neutral-600">
             <video
               className="rounded-lg m-auto"
               src="/home-page/projects-demo/ideaparallels/pc.mp4"
@@ -261,7 +261,7 @@ const arr: projectItem[] = [
             />
             <div className="mx-auto">Блок большого контента на пк</div>
           </div>
-          <div>
+          <div className="w-[400px] h-[633.203px] mx-auto bg-neutral-600">
             <video
               className="rounded-lg m-auto"
               src="/home-page/projects-demo/ideaparallels/mobile.mp4"
@@ -290,7 +290,7 @@ const arr: projectItem[] = [
           </div>
         </div>
 
-        <div className={`flex flex-col gap-2`}>
+        <div className={`w-[300px] h-[629.703px] bg-neutral-600 mx-auto`}>
           <video
             className="rounded-lg m-auto"
             src="/home-page/projects-demo/auto/main.mp4"
