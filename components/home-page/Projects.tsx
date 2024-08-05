@@ -34,7 +34,7 @@ const arr: projectItem[] = [
 
           <div className={blockMainContentStyles}>
             <div className={eachBlockStyles}>
-              <div className="bg-white rounded-md flex">
+              <div className="bg-white rounded-md flex h-[475.391px] w-full">
                 <video
                   className="rounded-lg m-auto"
                   src="/home-page/projects-demo/dazygoods/gorki.mp4"
@@ -54,32 +54,36 @@ const arr: projectItem[] = [
             </div>
 
             <div className={eachBlockStyles}>
-              <video
-                className="rounded-lg m-auto"
-                src="/home-page/projects-demo/dazygoods/email.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-                width={800}
-              />
+              <div className="w-[800px] h-[511.469px] bg-white">
+                <video
+                  className="rounded-lg m-auto"
+                  src="/home-page/projects-demo/dazygoods/email.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  width={800}
+                />
+              </div>
               <div className={blockTextStyles}>
                 Проверка введенного пользователем почты
               </div>
             </div>
 
             <div className={eachBlockStyles}>
-              <video
-                className="m-auto"
-                width={800}
-                src="/home-page/projects-demo/dazygoods/gorki2.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
+              <div className="w-[800px] h-[459.562px] bg-white">
+                <video
+                  className="m-auto"
+                  width={800}
+                  src="/home-page/projects-demo/dazygoods/gorki2.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
               <div className={blockTextStyles}>
                 Подсчет примерной стоимости доставки, автокомплит с
                 государственным справочником
@@ -87,14 +91,16 @@ const arr: projectItem[] = [
             </div>
 
             <div className={eachBlockStyles}>
-              <video
-                src="/home-page/projects-demo/dazygoods/gorki3.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
+              <div className="w-[1336px] h-[540.891px] bg-white">
+                <video
+                  src="/home-page/projects-demo/dazygoods/gorki3.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
               <div className={blockTextStyles}>
                 react-dropzone для загрузки сразу несколько фотографий на Yandex
                 Cloud и react-beautiful-dnd для расстановки очереди картинок в
