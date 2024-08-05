@@ -136,78 +136,89 @@ const arr: projectItem[] = [
           </div>
           <div className={blockMainContentStyles}>
             <div>
-              <img
-                src="/home-page/projects-demo/malwand/result.png"
-                className="mx-auto"
-                width={800}
-                alt=""
-              />
+              <div className="w-[800px] mx-auto h-[269.781px] bg-neutral-600">
+                <img
+                  src="/home-page/projects-demo/malwand/result.png"
+                  className="mx-auto"
+                  width={800}
+                  alt=""
+                />
+              </div>
               <div className="mx-auto">
                 Результат: получилось завоевать внимание и запустить процесс
                 итераций
               </div>
             </div>
             <div>
-              <video
-                className="rounded-lg m-auto"
-                src="/home-page/projects-demo/malwand/forpc.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-                width={800}
-              />
+              <div className="h-[497.766px] mx-auto w-[800px] bg-neutral-600">
+                <video
+                  className="rounded-lg m-auto"
+                  src="/home-page/projects-demo/malwand/forpc.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  width={800}
+                />
+              </div>
               <div className="mx-auto">
                 Табличный просмотр и меню редактирования контента на пк
               </div>
             </div>
             <div>
-              <video
-                className="rounded-lg m-auto"
-                src="/home-page/projects-demo/malwand/formobile.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-                width={400}
-              />
+              <div className="h-[647.203px] mx-auto w-[400px] bg-neutral-600">
+                <video
+                  className="rounded-lg m-auto"
+                  src="/home-page/projects-demo/malwand/formobile.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  width={400}
+                />
+              </div>
               <div className="m-auto">На мобильных устройствах</div>
             </div>
             <div>
-              <video
-                className="rounded-lg m-auto"
-                src="/home-page/projects-demo/malwand/funpc.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-                width={800}
-              />
+              <div className="w-[800px] h-[528.266px] mx-auto bg-neutral-600">
+                <video
+                  className="rounded-lg m-auto"
+                  src="/home-page/projects-demo/malwand/funpc.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  width={800}
+                />
+              </div>
               <div className="mx-auto">
                 Сортировка, фильтрация и поиск в таблице на пк
               </div>
             </div>
             <div>
-              <video
-                className="rounded-lg m-auto"
-                src="/home-page/projects-demo/malwand/funmobile.mp4"
-                controls={false}
-                autoPlay
-                muted
-                loop
-                playsInline
-                width={600}
-              />
+              <div className="w-[600px] h-[396.203px] mx-auto bg-neutral-600">
+                <video
+                  className="rounded-lg m-auto"
+                  src="/home-page/projects-demo/malwand/funmobile.mp4"
+                  controls={false}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  width={600}
+                />
+              </div>
               <div className="mx-auto">
                 Сортировка, фильтрация и поиск в таблице на мобильных
                 устройствах
               </div>
             </div>
             <div>
-              <video
+             <div className="w-[800px] h-[586.734px] mx-auto bg-neutral-600">
+             <video
                 className="rounded-lg m-auto"
                 src="/home-page/projects-demo/malwand/themes.mp4"
                 controls={false}
@@ -217,6 +228,7 @@ const arr: projectItem[] = [
                 playsInline
                 width={800}
               />
+             </div>
               <div className="mx-auto">Cветлая/темная тема</div>
             </div>
           </div>
@@ -248,30 +260,34 @@ const arr: projectItem[] = [
         </div>
 
         <div className={blockMainContentStyles}>
-          <div className="w-[800px] h-[586.734px] mx-auto bg-neutral-600">
-            <video
-              className="rounded-lg m-auto"
-              src="/home-page/projects-demo/ideaparallels/pc.mp4"
-              controls={false}
-              autoPlay
-              muted
-              loop
-              playsInline
-              width={800}
-            />
+          <div>
+            <div className="w-[800px] h-[586.734px] mx-auto bg-neutral-600 rounded-lg">
+              <video
+                className="rounded-lg m-auto"
+                src="/home-page/projects-demo/ideaparallels/pc.mp4"
+                controls={false}
+                autoPlay
+                muted
+                loop
+                playsInline
+                width={800}
+              />
+            </div>
             <div className="mx-auto">Блок большого контента на пк</div>
           </div>
-          <div className="w-[400px] h-[633.203px] mx-auto bg-neutral-600">
-            <video
-              className="rounded-lg m-auto"
-              src="/home-page/projects-demo/ideaparallels/mobile.mp4"
-              controls={false}
-              autoPlay
-              muted
-              loop
-              playsInline
-              width={400}
-            />
+          <div>
+            <div className="w-[400px] h-[633.203px] mx-auto bg-neutral-600 rounded-lg">
+              <video
+                className="rounded-lg m-auto"
+                src="/home-page/projects-demo/ideaparallels/mobile.mp4"
+                controls={false}
+                autoPlay
+                muted
+                loop
+                playsInline
+                width={400}
+              />
+            </div>
             <div className="mx-auto">На мобильных устройствах</div>
           </div>
         </div>
