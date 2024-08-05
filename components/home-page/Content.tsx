@@ -73,7 +73,7 @@ const UIContentWraper = (item: UIExampleType) => (
 const Content = () => {
   const isMobile = useIsMobile();
 
-  const [activeBlock, setActiveBlock] = useState<"ui" | "projects">("projects");
+  const [activeBlock, setActiveBlock] = useState<"ui" | "projects">("ui");
 
   const activeStyles = "border-b-2 border-white";
   const nonActiveStyles = "border-b-2 border-transparent";
