@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ExampleWrapper from "@/components/ExampleWrapper";
+import { delay, getRandomInt } from "@/lib/utils";
 
 export type itemType = {
   id: string;
@@ -40,7 +41,20 @@ const array: itemType[] = [
     title: "Pirates in the jungle",
     description: "Find the treasure.",
     text: "You are a pirate and you have to find the treasure in the jungle. But be careful, there are traps and wild animals. Some filler text to make it longer. Maybe even longer, because it looks better.",
-  },
+  }
+
+  /**
+   * 
+   * ,
+  {
+    id: "pirates",
+    img: "/pirate.png",
+    title: "Pirates in the jungle",
+    description: "Find the treasure.",
+    text: "You are a pirate and you have to find the treasure in the jungle. But be careful, there are traps and wild animals. Some filler text to make it longer. Maybe even longer, because it looks better.",
+  }
+   * 
+   * ,
   {
     id: "mountains",
     img: "/boy.webp",
@@ -48,6 +62,7 @@ const array: itemType[] = [
     description: "Be careful.",
     text: "You are lost in the mountains and you have to find your way home. But be careful, there are dangerous animals and you can get lost",
   },
+   */
 ];
 
 const Item = ({
@@ -59,13 +74,14 @@ const Item = ({
 }) => {
   return (
     <motion.div
-      className="group flex w-[340px] lg:w-[450px] cursor-pointer items-center gap-4 px-2"
+      className="group flex w-[340px] lg:w-[400px] cursor-pointer items-center gap-4 px-2"
       onClick={() => itemSelectEvent(data)}
       layoutId={data.id}
+      id={data.id}
     >
       <motion.img
-        height="56"
-        width="56"
+        height="50"
+        width="50"
         src={data.img}
         layoutId={`image-${data.id}`}
         style={{
@@ -73,7 +89,7 @@ const Item = ({
         }}
       />
       <motion.div
-        className="flex grow items-center justify-between border-b border-[#B5B3AD] group-last:border-none"
+        className="flex grow items-center justify-between border-b border-neutral-400 group-last:border-none"
         layoutId={`block-${data.id}`}
       >
         <motion.div
@@ -81,13 +97,13 @@ const Item = ({
           layoutId={`link-${data.id}`}
         >
           <motion.h2
-            className="text-sm font-medium"
+            className="text-xs font-medium"
             layoutId={`title-${data.id}`}
           >
             {data.title}
           </motion.h2>
           <motion.p
-            className="text-sm text-[#B5B3AD] font-medium"
+            className="text-xs text-[#B5B3AD] font-medium"
             layoutId={`description-${data.id}`}
           >
             {data.description}
@@ -108,16 +124,8 @@ const DesktopDialogWindow = ({
   <AnimatePresence>
     {selectedItem && (
       <motion.div
-        key="overlay"
-        className="fixed inset-0 z-50 bg-transparent"
-        onClick={clickAwayListener}
-      />
-    )}
-
-    {selectedItem && (
-      <motion.div
         layoutId={selectedItem?.id}
-        className="w-[92%] lg:w-[500px] h-[170px] m-auto absolute inset-0 z-80"
+        className="w-[92%] lg:w-[480px] h-[170px] m-auto absolute inset-0 z-80"
       >
         <div
           className=" w-full p-4 flex flex-col gap-2 rounded-md"
@@ -168,26 +176,66 @@ const DesktopDialogWindow = ({
 const List = () => {
   const [selectedItem, setSelectedItem] = useState<itemType | null>(null);
   const itemSelectEvent = (newItem: itemType) => {
-    setSelectedItem(newItem);
+    //setIsMouseIn(true);
+    //setSelectedItem(newItem);
   };
 
   const clickAwayListener = () => {
+    setIsMouseIn(false);
     setSelectedItem(null);
   };
 
+  const [runInterval, setRunInterval] = useState(true);
+  const intervalRef = useRef<null | ReturnType<typeof setTimeout>>(null);
+
+  const runDemoAnimation = ()=>{
+    clickAwayListener();
+    setTimeout(() => {
+      setSelectedItem(array[getRandomInt(array.length)]);
+    }, 1000);
+  }
+
+  useEffect(() => {
+    runDemoAnimation()
+    if (runInterval) {
+      intervalRef.current = setInterval(() => {
+        runDemoAnimation()
+      }, 2000);
+    }
+
+    return () => {
+      clearInterval(intervalRef.current!);
+    };
+  }, [runInterval]);
+
+  const [isMouseIn, setIsMouseIn] = useState(false);
+
   return (
-    <ExampleWrapper>
-      <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
-        <div className="relative flex w-full flex-col items-center lg:px-2">
-          {array.map((item) => (
-            <Item
-              key={item.title}
-              data={item}
-              itemSelectEvent={itemSelectEvent}
-            />
-          ))}
+    <ExampleWrapper styles="p-0 h-[450px]">
+      <div className="w-full px-4 py-2">
+        <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
+          <div className="relative flex w-full flex-col items-center lg:px-2">
+            {array.map((item) => (
+              <Item
+                key={item.title}
+                data={item}
+                itemSelectEvent={itemSelectEvent}
+              />
+            ))}
+          </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedItem && isMouseIn && (
+          <motion.div
+            key="overlay"
+            className="fixed inset-0 z-50 bg-transparent"
+            onClick={clickAwayListener}
+          />
+        )}
+      </AnimatePresence>
+
       <DesktopDialogWindow
         selectedItem={selectedItem}
         clickAwayListener={clickAwayListener}

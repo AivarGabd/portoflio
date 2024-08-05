@@ -3,21 +3,12 @@
 const animals = [
   { key: "cat", label: "Cat" },
   { key: "dog", label: "Dog" },
-  { key: "elephant", label: "Elephant" },
-  { key: "lion", label: "Lion" },
-  { key: "tiger", label: "Tiger" },
-  { key: "giraffe", label: "Giraffe" },
-  { key: "dolphin", label: "Dolphin" },
-  { key: "penguin", label: "Penguin" },
-  { key: "zebra", label: "Zebra" },
-  { key: "shark", label: "Shark" },
-  { key: "whale", label: "Whale" },
-  { key: "otter", label: "Otter" },
-  { key: "crocodile", label: "Crocodile" },
+  { key: "elephant", label: "Elephant" }
 ];
 
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { useIsMobile } from "@/lib/useIsMobile";
+import { delay } from "@/lib/utils";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsUpDown, Search, User } from "lucide-react";
@@ -46,6 +37,29 @@ const ExpandableButtons = () => {
       setIsOverlayOpen(false);
     }
   }, [isSelectorExpanded, isInputExpanded, isButtonExpanded]);
+
+  const runDemoAnimation = async () => {
+    setSelectorOpen(false);
+    setIsSelectorExpanded(false);
+    setIsButtonExpanded(false);
+    setIsInputExpanded(true);
+    await delay(500);
+    setIsButtonExpanded(false);
+    setIsInputExpanded(false);
+    setIsSelectorExpanded(true);
+    await delay(1000);
+    setIsInputExpanded(false);
+    setSelectorOpen(false);
+    setIsSelectorExpanded(false);
+    setIsButtonExpanded(true);
+  };
+
+  useEffect(() => {
+    runDemoAnimation();
+    setInterval(() => {
+      runDemoAnimation();
+    }, 2500);
+  }, []);
 
   return (
     <>
@@ -152,15 +166,15 @@ const ExpandableButtons = () => {
         </div>
       </ExampleWrapper>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {isOverlayOpen && (
           <motion.div
             key="overlay"
-            className="fixed inset-0 z-40"
+            className="fixed inset-0 z-40 bg-gray-500"
             onClick={clickAwayListener}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </>
   );
 };

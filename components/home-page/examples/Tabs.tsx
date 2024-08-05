@@ -1,8 +1,9 @@
 "use client";
 
 import ExampleWrapper from "@/components/ExampleWrapper";
+import { getRandomInt } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 let tabsData = [
   { id: "world", label: "World" },
@@ -16,17 +17,38 @@ function Tabs() {
   let [activeTab, setActiveTab] = useState(tabsData[0].id);
   let [focusedTab, setFocusedTab] = useState<string | null>(tabsData[0].id);
 
+
+  const runDemoAnimation = ()=>{
+    const targetId = tabsData[getRandomInt(tabsData.length)].id
+      setFocusedTab(targetId)
+      setTimeout(() => {
+        setActiveTab(targetId)
+      }, 500);
+  }
+
+  useEffect(()=>{
+    runDemoAnimation()
+
+    setInterval(() => {
+      runDemoAnimation()
+    }, 2000);
+  },[])
+
   return (
-    <ExampleWrapper>
+    <ExampleWrapper styles="h-[100px]">
       <div
         className="flex space-x-1 h-fit m-auto"
         onMouseLeave={() => setFocusedTab(null)}
       >
         {tabsData.map((tab) => (
-          <div //avoid button autofocus event, effects home page 
+          <button 
             key={tab.id}
-            onMouseOver={() => setFocusedTab(tab.id)}
-            onClick={() => setActiveTab(tab.id)}
+            onMouseOver={() => {
+              //setFocusedTab(tab.id)
+            }}
+            onClick={() => {
+              //setActiveTab(tab.id)
+            }}
             className={`${
               focusedTab === tab.id || activeTab === tab.id
                 ? "text-white"
@@ -54,7 +76,7 @@ function Tabs() {
             )}
 
             <div className="relative z-50">{tab.label}</div>
-          </div>
+          </button>
         ))}
       </div>
     </ExampleWrapper>
