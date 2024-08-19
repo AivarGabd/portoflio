@@ -20,6 +20,12 @@ const UIBadgesBlock = () => (
     >
       next ui
     </Chip>
+    <Chip
+      variant="flat"
+      avatar={<Avatar name="mui" src="/home-page/mui.png" />}
+    >
+      mui
+    </Chip>
 
     <Chip
       variant="flat"
