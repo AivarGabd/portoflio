@@ -17,7 +17,6 @@ import ExpandableButtons from "@/components/home-page/examples/ExpandableButtons
 import ThemeButton from "@/components/home-page/examples/ThemeButton";
 import CustomDrawer from "@/components/home-page/examples/Drawer";
 
-
 const UIExamples = [
   {
     name: "Интерактивный список",
@@ -99,8 +98,11 @@ export default function Home() {
               </li>
               <li>
                 Писать на нативном JavaScript/TypeScript + DOM или использовать
-                его вместе с React. C React работал, как и со state-менеджерами
-                (MobX, Redux, Zustand), так и без них.
+                его вместе с React.
+              </li>
+              <li>
+                Опыт работы со следуйщими стейт менеджерами - MobX, Redux,
+                Zustand.
               </li>
               <li>
                 Подбирать необходимые под конкретные задачи UI библиотеки.
@@ -129,8 +131,8 @@ export default function Home() {
                 подкачивать от туда файлы и запускать сервер с публичным IP.
               </li>
               <li>
-                Конфигурировать SMTP сервер под свой домен и заниматься рассылкой
-                стилизованных email через nodemailer.
+                Конфигурировать SMTP сервер под свой домен и заниматься
+                рассылкой стилизованных email через nodemailer.
               </li>
               <li>
                 Опыт работы с OAuth включая подключение их логин через
@@ -242,7 +244,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      
     </>
   );
 }
