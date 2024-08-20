@@ -51,26 +51,9 @@ export default function Home() {
               <div className="text-light-grey">web dev</div>
             </div>
           </div>
-
-        
         </div>
 
         <div className="flex flex-col gap-1">
-          {/* <div className="text-light-grey mt-[20px] flex flex-col gap-1">
-            <Link
-              href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
-            >
-              Программирование и приложений является главными увлечением с 19
-              лет
-              <MoveUpRight
-                size={16}
-                className="inline  group-hover:stroke-white transition-all"
-              />
-            </Link>
-          </div> */}
           <div>Web-разработкой занимаюсь с зимы 2021 года.</div>
 
           <div>
@@ -150,6 +133,21 @@ export default function Home() {
             </ul>
           </div>
 
+          <div className="text-light-grey mt-[20px] flex flex-col gap-1">
+            <Link
+              href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+            >
+              Программирование и приложений является главными увлечением с 19
+              лет
+              <MoveUpRight
+                size={16}
+                className="inline  group-hover:stroke-white transition-all"
+              />
+            </Link>
+          </div>
           <div className="flex flex-row gap-3 text-light-grey text-sm">
             <div>aivargabd@gmail.com</div>
             <div>tg: @aivargab</div>
@@ -219,7 +217,7 @@ export default function Home() {
               </div>
               <div className="text-light-grey text-sm">
                 Табличный вид для персонального листа в MyAnimeList используя их
-                API
+                API, в перспективе личный open-source
               </div>
               <ExternalLink
                 size={20}
