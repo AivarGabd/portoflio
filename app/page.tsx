@@ -52,21 +52,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* <div className="flex flex-row gap-0.5 lg:gap-1 flex-wrap">
-            <Chip
-              variant="flat"
-              avatar={<Avatar name="nextjs" src="/home-page/nextjs.png" />}
-            >
-              nextjs
-            </Chip>
-            <UIBadgesBlock />
-            <StateManagersBadgesBlock />
-            <DBBagesBlock />
-          </div> */}
+        
         </div>
 
         <div className="flex flex-col gap-1">
-          <div className="text-light-grey mt-[20px] flex flex-col gap-1">
+          {/* <div className="text-light-grey mt-[20px] flex flex-col gap-1">
             <Link
               href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
               rel="noopener noreferrer"
@@ -80,7 +70,7 @@ export default function Home() {
                 className="inline  group-hover:stroke-white transition-all"
               />
             </Link>
-          </div>
+          </div> */}
           <div>Web-разработкой занимаюсь с зимы 2021 года.</div>
 
           <div>
