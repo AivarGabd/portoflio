@@ -1,10 +1,5 @@
-import DBBagesBlock from "@/components/home-page/DBBagesBlock";
-import StateManagersBadgesBlock from "@/components/home-page/StateManagersBadgesBlock";
-import UIBadgesBlock from "@/components/home-page/UIBadgesBlock";
-import { Avatar, Chip } from "@nextui-org/react";
 import { ExternalLink, MoveUpRight } from "lucide-react";
 import Link from "next/link";
-
 import {
   Accordion,
   AccordionContent,
@@ -109,9 +104,9 @@ export default function Home() {
                 Подключать, оптимизировать и стилизовать сайт под светлую или
                 темную темы.
               </li>
-              <li>Оптимизировать работу SSR.</li>
+              <li>Опыт оптимизации под pagespeed (LCP, FCP) и lighthouse</li>
+              <li>Опыт оптимизации работы SSR.</li>
               <li>Оживлять сайт анимациями при помощи Framer-motion.</li>
-
               <li>Работать с макетами в Adobe Photoshop, Figma.</li>
               <li>Визулизировать данные при помощи d3js.</li>
               <li>
