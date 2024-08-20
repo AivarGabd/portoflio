@@ -38,28 +38,7 @@ const ExpandableButtons = () => {
     }
   }, [isSelectorExpanded, isInputExpanded, isButtonExpanded]);
 
-  const runDemoAnimation = async () => {
-    setSelectorOpen(false);
-    setIsSelectorExpanded(false);
-    setIsButtonExpanded(false);
-    setIsInputExpanded(true);
-    await delay(500);
-    setIsButtonExpanded(false);
-    setIsInputExpanded(false);
-    setIsSelectorExpanded(true);
-    await delay(1000);
-    setIsInputExpanded(false);
-    setSelectorOpen(false);
-    setIsSelectorExpanded(false);
-    setIsButtonExpanded(true);
-  };
 
-  useEffect(() => {
-    runDemoAnimation();
-    setInterval(() => {
-      runDemoAnimation();
-    }, 2500);
-  }, []);
 
   return (
     <>
@@ -166,15 +145,15 @@ const ExpandableButtons = () => {
         </div>
       </ExampleWrapper>
 
-      {/* <AnimatePresence>
+      <AnimatePresence>
         {isOverlayOpen && (
           <motion.div
             key="overlay"
-            className="fixed inset-0 z-40 bg-gray-500"
+            className="fixed inset-0 z-40 bg-transparent"
             onClick={clickAwayListener}
           />
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
     </>
   );
 };

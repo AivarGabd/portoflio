@@ -19,16 +19,7 @@ const sunPaths = [
 const ThemeButton = () => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
 
-  const runDemoAnimation = () => {
-    setTheme((prev) => (prev == "dark" ? "light" : "dark"));
-  };
-
-  useEffect(() => {
-    runDemoAnimation();
-    setInterval(() => {
-      runDemoAnimation();
-    }, 3000);
-  }, []);
+  
 
   return (
     <ExampleWrapper

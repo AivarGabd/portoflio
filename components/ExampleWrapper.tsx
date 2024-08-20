@@ -12,7 +12,7 @@ const ExampleWrapper = ({
   <>
     <div
       className={cn(
-        ` bg-black rounded-t-md px-4 py-6 relative flex lg:h-[300px] w-[380px] lg:w-[500px] ${styles}`
+        ` bg-black rounded-md px-4 py-6 relative flex lg:h-[300px] w-[380px] lg:w-[500px] ${styles}`
       )}
     >
       {children}

@@ -18,21 +18,7 @@ function Tabs() {
   let [focusedTab, setFocusedTab] = useState<string | null>(tabsData[0].id);
 
 
-  const runDemoAnimation = ()=>{
-    const targetId = tabsData[getRandomInt(tabsData.length)].id
-      setFocusedTab(targetId)
-      setTimeout(() => {
-        setActiveTab(targetId)
-      }, 500);
-  }
 
-  useEffect(()=>{
-    runDemoAnimation()
-
-    setInterval(() => {
-      runDemoAnimation()
-    }, 2000);
-  },[])
 
   return (
     <ExampleWrapper styles="h-[100px]">
@@ -44,10 +30,10 @@ function Tabs() {
           <button 
             key={tab.id}
             onMouseOver={() => {
-              //setFocusedTab(tab.id)
+              setFocusedTab(tab.id)
             }}
             onClick={() => {
-              //setActiveTab(tab.id)
+              setActiveTab(tab.id)
             }}
             className={`${
               focusedTab === tab.id || activeTab === tab.id

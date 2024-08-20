@@ -176,39 +176,15 @@ const DesktopDialogWindow = ({
 const List = () => {
   const [selectedItem, setSelectedItem] = useState<itemType | null>(null);
   const itemSelectEvent = (newItem: itemType) => {
-    //setIsMouseIn(true);
-    //setSelectedItem(newItem);
+    setSelectedItem(newItem);
   };
 
   const clickAwayListener = () => {
-    setIsMouseIn(false);
     setSelectedItem(null);
   };
 
-  const [runInterval, setRunInterval] = useState(true);
-  const intervalRef = useRef<null | ReturnType<typeof setTimeout>>(null);
 
-  const runDemoAnimation = ()=>{
-    clickAwayListener();
-    setTimeout(() => {
-      setSelectedItem(array[getRandomInt(array.length)]);
-    }, 1000);
-  }
 
-  useEffect(() => {
-    runDemoAnimation()
-    if (runInterval) {
-      intervalRef.current = setInterval(() => {
-        runDemoAnimation()
-      }, 2000);
-    }
-
-    return () => {
-      clearInterval(intervalRef.current!);
-    };
-  }, [runInterval]);
-
-  const [isMouseIn, setIsMouseIn] = useState(false);
 
   return (
     <ExampleWrapper styles="p-0 h-[450px]">
@@ -227,7 +203,7 @@ const List = () => {
       </div>
 
       <AnimatePresence>
-        {selectedItem && isMouseIn && (
+        {selectedItem && (
           <motion.div
             key="overlay"
             className="fixed inset-0 z-50 bg-transparent"

@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <LayoutClient reqUserAgent={reqUserAgent}>
           <NextUIProvider>
-            <main className="pt-12 mx-auto px-2">{children}</main>
+            <main className="pt-12 mx-auto px-2 max-w-[644px]">{children}</main>
           </NextUIProvider>
         </LayoutClient>
         <Analytics />
