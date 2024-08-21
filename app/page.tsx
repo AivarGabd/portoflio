@@ -40,6 +40,12 @@ const UIExamples = [
   },
 ];
 
+const Skill = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => <span className="text-white">{children}</span>;
+
 export default function Home() {
   return (
     <>
@@ -56,79 +62,103 @@ export default function Home() {
         <div className="flex flex-col gap-1">
           <div>Web-разработкой занимаюсь с зимы 2021 года.</div>
 
-          <div>
+          <div className="group">
             На front-end я умею:
-            <ul className="list-disc ml-6 flex flex-col gap-2">
+            <ul className="list-disc ml-6 flex flex-col gap-2 text-[#cecece] group-hover:text-white transition-all">
               <li>
-                Верстать (HTML, CSS, Tailwindcss, Sass, SCSS, Less,
-                Styled-components и т.д. Знаком с методикой mobile-first и
-                адаптивной версткой).
+                Верстать (
+                <Skill>
+                  HTML, CSS, Tailwindcss, Sass, SCSS, Less, Styled-components и
+                  т.д
+                </Skill>
+                . Знаком с методикой{" "}
+                <Skill>mobile-first и адаптивной версткой</Skill>).
               </li>
               <li>
-                Писать на нативном JavaScript/TypeScript + DOM или использовать
-                его вместе с React.
+                Писать на нативном <Skill>JavaScript/TypeScript + DOM</Skill>{" "}
+                или использовать его вместе с <Skill>React</Skill>.
               </li>
               <li>
-                Опыт работы со следуйщими стейт менеджерами - MobX, Redux,
-                Zustand.
+                Опыт работы со следуйщими стейт менеджерами -{" "}
+                <Skill>MobX, Redux, Zustand.</Skill>
               </li>
               <li>
-                Подбирать необходимые под конкретные задачи UI библиотеки.
-                Подключать, оптимизировать и стилизовать сайт под светлую или
-                темную темы.
+                Подбирать необходимые под конкретные задачи{" "}
+                <Skill>UI библиотеки</Skill>. Подключать, оптимизировать и
+                стилизовать сайт под <Skill>светлую или темную темы.</Skill>
               </li>
-              <li>Опыт оптимизации под pagespeed (LCP, FCP) и lighthouse</li>
-              <li>Опыт оптимизации работы SSR.</li>
-              <li>Оживлять сайт анимациями при помощи Framer-motion.</li>
-              <li>Работать с макетами в Adobe Photoshop, Figma.</li>
-              <li>Визулизировать данные при помощи d3js.</li>
               <li>
-                Работать с таким сборщиком модулей, как Webpack, применяя
-                Loader-ы, Plugin-ы и собирая конфигурации для разных окружений.
+                Опыт оптимизации под{" "}
+                <Skill>pagespeed (LCP, FCP) и lighthouse</Skill>
+              </li>
+              <li>
+                Опыт оптимизации работы <Skill>SSR</Skill>.
+              </li>
+              <li>
+                Оживлять сайт <Skill>анимациями при помощи Framer-motion</Skill>
+                .
+              </li>
+              <li>
+                Работать с макетами в <Skill>Adobe Photoshop, Figma</Skill>.
+              </li>
+              <li>
+                Визулизировать данные при помощи <Skill>d3js</Skill>.
+              </li>
+              <li>
+                Работать с таким сборщиком модулей, как <Skill>Webpack</Skill>,
+                применяя <Skill>Loader-ы</Skill>, <Skill>Plugin-ы</Skill> и
+                собирая <Skill>конфигурации для разных окружений</Skill>.
               </li>
             </ul>
           </div>
 
-          <div>
+          <div className="group">
             Еще я умею:
-            <ul className="list-disc ml-6 flex flex-col gap-2">
-              <li>Работать с Git.</li>
+            <ul className="list-disc ml-6 flex flex-col gap-2 text-[#cecece] group-hover:text-white transition-all">
               <li>
-                Работать с Linux системами и серверами, настраивать DNS,
-                подключать домены с SSL сертификатами. Ставить на них Git, чтобы
-                подкачивать от туда файлы и запускать сервер с публичным IP.
+                Работать с <Skill>Git</Skill>.
               </li>
               <li>
-                Конфигурировать SMTP сервер под свой домен и заниматься
-                рассылкой стилизованных email через nodemailer.
+                Работать с <Skill>Linux системами</Skill> и серверами,
+                настраивать <Skill>DNS</Skill>, подключать домены с{" "}
+                <Skill> SSL сертификатами</Skill>. Ставить на них{" "}
+                <Skill>Git</Skill>, чтобы подкачивать от туда файлы и{" "}
+                <Skill>запускать сервер с публичным IP</Skill>.
               </li>
               <li>
-                Опыт работы с OAuth включая подключение их логин через
-                провайдера(Google, Github, etc.).
+                Конфигурировать <Skill>SMTP</Skill> сервер под свой домен и
+                заниматься рассылкой{" "}
+                <Skill>стилизованных email через nodemailer</Skill>.
               </li>
               <li>
-                Подключение API любой сложности и глубины, платежные, такие как
-                ЮКасса или стандартные вроде Open AI.
+                Опыт работы с <Skill>OAuth</Skill> включая подключение их логин
+                через <Skill>провайдера(Google, Github, etc.)</Skill>.
               </li>
               <li>
-                Отправкой обычных или blob файлов на облачные хранилища.(Yandex
-                Cloud, AWS Backet, Azure, etc).
+                Подключение <Skill>API любой сложности и глубины</Skill>,
+                платежные, такие как ЮКасса или стандартные вроде Open AI.
               </li>
               <li>
-                Писать на JavaScript/TypeScript (NodeJS), используя фреймворки
-                Express, NextJS.
+                Отправкой обычных или blob файлов на облачные хранилища
+                <Skill>(Yandex Cloud, AWS Backet, Azure, etc)</Skill>.
               </li>
               <li>
-                Работать, как с реляционными БД Azure Cosmos DB, MySQL, так и
-                нереляционной MongoDB, Firebase.
+                Писать на <Skill>JavaScript/TypeScript (NodeJS)</Skill>,
+                используя фреймворки <Skill>Express</Skill>,{" "}
+                <Skill>NextJS</Skill>.
               </li>
-              <li>Работать с WebSockets через Socket IO.</li>
+              <li>
+                Работать, как с <Skill>реляционными БД Azure Cosmos DB</Skill>,{" "}
+                <Skill>MySQL</Skill>, так и <Skill>нереляционной MongoDB</Skill>
+                , <Skill>Firebase</Skill>.
+              </li>
+              <li>Работать с <Skill>WebSockets</Skill> через <Skill>Socket IO</Skill>.</li>
               <li>
                 Читать документацию, вести переписку и говорить не только на
-                русском, но и на английском языке.
+                русском, но и <Skill>на английском языке</Skill>.
               </li>
               <li>
-                Поднимать хостинг на pay-as-you go решениях, вроде AWS и Vercel.
+                Поднимать хостинг на pay-as-you go решениях, вроде <Skill>AWS</Skill> и <Skill>Vercel</Skill>.
               </li>
             </ul>
           </div>
