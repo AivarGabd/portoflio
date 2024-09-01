@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col gap-[100px] mt-10 pb-40">
-        <div className=" flex flex-col gap-2">
+        <div className="flex flex-col gap-2">
           <div className="w-full flex">
             <div className="w-fit">
               <div className="font-medium">Айвар Габдрахманов</div>
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <div>Web-разработкой занимаюсь с зимы 2021 года.</div>
+          <div>Web-разработкой занимаюсь с 2020 года.</div>
 
           <div className="group">
             На front-end я умею:
@@ -152,13 +152,17 @@ export default function Home() {
                 <Skill>MySQL</Skill>, так и <Skill>нереляционной MongoDB</Skill>
                 , <Skill>Firebase</Skill>.
               </li>
-              <li>Работать с <Skill>WebSockets</Skill> через <Skill>Socket IO</Skill>.</li>
+              <li>
+                Работать с <Skill>WebSockets</Skill> через{" "}
+                <Skill>Socket IO</Skill>.
+              </li>
               <li>
                 Читать документацию, вести переписку и говорить не только на
                 русском, но и <Skill>на английском языке</Skill>.
               </li>
               <li>
-                Поднимать хостинг на pay-as-you go решениях, вроде <Skill>AWS</Skill> и <Skill>Vercel</Skill>.
+                Поднимать хостинг на pay-as-you go решениях, вроде{" "}
+                <Skill>AWS</Skill> и <Skill>Vercel</Skill>.
               </li>
             </ul>
           </div>
@@ -218,7 +222,7 @@ export default function Home() {
                 ideaparallels{" "}
                 <ExternalLink
                   size={16}
-                  className=" inline mt-[-6px] lg:invisible"
+                  className=" inline mt-[-6px] lg:invisible "
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
