@@ -21,8 +21,8 @@ const config = {
     },
     extend: {
       colors: {
-        'light-grey': "#B5B3AD",
-        focus:'#191918',
+        'light-grey': "var(--light-grey)",
+        focus:'var(--focus)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
