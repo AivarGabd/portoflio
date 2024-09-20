@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 const Page = () => {
   // //сделать кастомный resolve
   // let test = new Promise((resolve, reject) => {
@@ -214,13 +216,11 @@ const Page = () => {
 
   // var addTwoNumbers = function (l1, l2) {
 
-    
   //   let summ = +l1.reverse().join("") + +l2.reverse().join("");
   //   return `${summ}`.split("").reverse()
   // };
 
-
-
+ 
 
   return <></>;
 };

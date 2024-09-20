@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ExampleWrapper from "@/components/ExampleWrapper";
-import { delay, getRandomInt } from "@/lib/utils";
+
 
 export type itemType = {
   id: string;
