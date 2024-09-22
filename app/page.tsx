@@ -59,8 +59,54 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-1">
-          <div>Web-разработкой занимаюсь с 2020 года.</div>
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2 ">
+            <div className="text-light-grey mt-[20px] flex flex-col gap-1">
+              <Link
+                href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+              >
+                Программирование и приложений является главными увлечением с 19
+                лет
+                <MoveUpRight
+                  size={16}
+                  className="inline  group-hover:stroke-white transition-all"
+                />
+              </Link>
+            </div>
+            <div>
+              web-разработкой начал заниматься со второй половины 2020 года,
+              делал свои проекты как fullstack, поднимал под них сервера и в
+              последствии бросил университет и начал заниматься сайтами все
+              время, c утра до ночи
+            </div>
+
+            <div>
+              В середине 2021 года через знакомых и тестовое задание попал в
+              проект с Российскими корнями который переехал в Кремневую долину и
+              начинал развиваться на весь внешний рынок, был продуктовый релиз
+              на результаты, просто на зп никто не сидел, я был в роли front-end
+              джуна
+            </div>
+
+            <div>
+              В начале 2022 года основательно взялся за один из своих ранних
+              проектов и чуть позже через второй цикл итераций нашел себе
+              ментора, продукт - менеджера, бывшего 10-го сотрудника Miro, в
+              течении полугода мы вместе делали релизы, искали product-market
+              fit, но основная ее цель была дать мне основу за счет которой я
+              дальше буду развиваться
+            </div>
+
+            <div>
+              Одновременно с этим основным проектом, который стал хоть и соло,
+              но стартапом делал лендинги, SPA приложения и интернет магазины
+              под заказ, от нуля и до релиза, выбирал какие облачные решения
+              поднимать из-за глобальной ситуации, дизайнил, верстал и тд
+            </div>
+          </div>
 
           <div className="group">
             На front-end я умею:
@@ -167,21 +213,6 @@ export default function Home() {
             </ul>
           </div>
 
-          <div className="text-light-grey mt-[20px] flex flex-col gap-1">
-            <Link
-              href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
-            >
-              Программирование и приложений является главными увлечением с 19
-              лет
-              <MoveUpRight
-                size={16}
-                className="inline  group-hover:stroke-white transition-all"
-              />
-            </Link>
-          </div>
           <div className="flex flex-row gap-3 text-light-grey text-sm">
             <div>aivargabd@gmail.com</div>
             <div>tg: @aivargab</div>
