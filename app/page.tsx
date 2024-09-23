@@ -66,7 +66,7 @@ export default function Home() {
                 href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer"
+                className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer text-white"
               >
                 Программирование и приложений является главными увлечением с 19
                 лет
@@ -87,8 +87,8 @@ export default function Home() {
               В середине 2021 года через знакомых и тестовое задание попал в
               проект с Российскими корнями который переехал в Кремневую долину и
               начинал развиваться на весь внешний рынок, был продуктовый релиз
-              на результаты, просто на зп никто не сидел, я был в роли front-end
-              джуна
+              на результаты, просто на зп никто не сидел, в основном занимался
+              frontend разработкой
             </div>
 
             <div>
