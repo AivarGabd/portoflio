@@ -187,7 +187,7 @@ const List = () => {
 
 
   return (
-    <ExampleWrapper styles="p-0 h-[450px]">
+    <ExampleWrapper styles="p-0 h-[320px]">
       <div className="w-full px-4 py-2">
         <div className="flex w-[350px] lg:w-full px-2 py-6 relative h-[423px] items-start overflow-hidden">
           <div className="relative flex w-full flex-col items-center lg:px-2">

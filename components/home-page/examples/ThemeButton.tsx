@@ -23,7 +23,7 @@ const ThemeButton = () => {
 
   return (
     <ExampleWrapper
-      styles={`${theme == "light" ? "bg-[#DFDFD6] light" : "bg-black dark"}`}
+      styles={`min-h-[150px] ${theme == "light" ? "bg-[#DFDFD6] light" : "bg-black dark"}`}
     >
       <div className="m-auto">
         <Button

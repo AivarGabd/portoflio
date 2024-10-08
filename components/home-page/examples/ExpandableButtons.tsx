@@ -8,7 +8,6 @@ const animals = [
 
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { useIsMobile } from "@/lib/useIsMobile";
-import { delay } from "@/lib/utils";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronsUpDown, Search, User } from "lucide-react";
@@ -42,7 +41,7 @@ const ExpandableButtons = () => {
 
   return (
     <>
-      <ExampleWrapper>
+      <ExampleWrapper styles="h-[200px] lg:min-h-[100px]">
         <div className="m-auto flex flex-row gap-1 relative z-50">
           <motion.div
             initial={{

@@ -49,12 +49,12 @@ const Skill = ({
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col gap-[100px] mt-10 pb-40">
+      <div className="flex flex-col gap-[100px] lg:mt-10 pb-40">
         <div className="flex flex-col gap-2">
           <div className="w-full flex">
             <div className="w-fit">
               <div className="font-medium">Айвар Габдрахманов</div>
-              <div className="text-light-grey">web dev</div>
+              <div className="text-light-grey">fullstack web dev</div>
             </div>
           </div>
         </div>
@@ -257,8 +257,7 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Платформа для углубления в образовательный контент, без
-                алгоритмов и AI
+                Лендинг для 5 версии продукта, своего стартапа(пока на паузе)
               </div>
               <ExternalLink
                 size={20}
@@ -281,8 +280,8 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Табличный вид для персонального листа в MyAnimeList используя их
-                API, в перспективе личный open-source
+                Личный open-source проект используя MyAnimeList API для
+                продуктовых скиллов
               </div>
               <ExternalLink
                 size={20}

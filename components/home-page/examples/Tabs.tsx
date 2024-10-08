@@ -21,7 +21,7 @@ function Tabs() {
 
 
   return (
-    <ExampleWrapper styles="h-[100px]">
+    <ExampleWrapper styles="h-[200px] lg:h-[100px]">
       <div
         className="flex space-x-1 h-fit m-auto"
         onMouseLeave={() => setFocusedTab(null)}
