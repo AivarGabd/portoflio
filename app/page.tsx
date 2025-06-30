@@ -59,165 +59,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2 ">
-            <div className="text-light-grey mt-[20px] flex flex-col gap-1">
-              <Link
-                href="https://storage.yandexcloud.net/ideaparallels/worldskills.JPG"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="underline group decoration-[#737373] hover:decoration-light-grey decoration-[1.5px] underline-offset-2 transition-all cursor-pointer text-white"
-              >
-                Программирование и приложений является главными увлечением с 19
-                лет
-                <MoveUpRight
-                  size={16}
-                  className="inline  group-hover:stroke-white transition-all"
-                />
-              </Link>
-            </div>
-            <div>
-              web-разработкой начал заниматься со второй половины 2020 года,
-              делал свои проекты как fullstack, поднимал под них сервера и в
-              последствии бросил университет и начал заниматься сайтами все
-              время, c утра до ночи
-            </div>
-
-            <div>
-              В 2021-ом году через знакомых и тестовое задание попал в
-              проект с Российскими корнями который переехал в Кремневую долину и
-              начинал развиваться на весь внешний рынок, был продуктовый релиз
-              на результаты, просто на зп никто не сидел, в основном занимался
-              frontend разработкой
-            </div>
-
-            <div>
-              В начале 2022 года основательно взялся за один из своих ранних
-              проектов и чуть позже через второй цикл итераций нашел себе
-              ментора, продукт - менеджера, бывшего 10-го сотрудника Miro, пока
-              в течении полугода мы вместе делали релизы, искали product-market
-              fit, нас хотели пригласить в YCombinator, но основная ее цель была
-              дать мне основу за счет которой я дальше буду развиваться
-            </div>
-
-            <div>
-              Одновременно с этим основным проектом, который стал хоть и соло,
-              но стартапом делал лендинги, SPA приложения и интернет магазины
-              под заказ, от нуля и до релиза, выбирал какие облачные решения
-              поднимать из-за глобальной ситуации, дизайнил, верстал и тд
-            </div>
-          </div>
-
-          <div className="group">
-            На front-end я умею:
-            <ul className="list-disc ml-6 flex flex-col gap-2 text-[#cecece] group-hover:text-white transition-all">
-              <li>
-                Верстать (
-                <Skill>
-                  HTML, CSS, Tailwindcss, Sass, SCSS, Less, Styled-components и
-                  т.д
-                </Skill>
-                . Знаком с методикой{" "}
-                <Skill>mobile-first и адаптивной версткой</Skill>).
-              </li>
-              <li>
-                Писать на нативном <Skill>JavaScript/TypeScript + DOM</Skill>{" "}
-                или использовать его вместе с <Skill>React</Skill>.
-              </li>
-              <li>
-                Опыт работы со следуйщими стейт менеджерами -{" "}
-                <Skill>MobX, Redux, Zustand.</Skill>
-              </li>
-              <li>
-                Подбирать необходимые под конкретные задачи{" "}
-                <Skill>UI библиотеки</Skill>. Подключать, оптимизировать и
-                стилизовать сайт под <Skill>светлую или темную темы.</Skill>
-              </li>
-              <li>
-                Опыт оптимизации под{" "}
-                <Skill>pagespeed (LCP, FCP) и lighthouse</Skill>
-              </li>
-              <li>
-                Опыт оптимизации работы <Skill>SSR</Skill>.
-              </li>
-              <li>
-                Оживлять сайт <Skill>анимациями при помощи Framer-motion</Skill>
-                .
-              </li>
-              <li>
-                Работать с макетами в <Skill>Adobe Photoshop, Figma</Skill>.
-              </li>
-              <li>
-                Визулизировать данные при помощи <Skill>d3js</Skill>.
-              </li>
-              <li>
-                Работать с таким сборщиком модулей, как <Skill>Webpack</Skill>,
-                применяя <Skill>Loader-ы</Skill>, <Skill>Plugin-ы</Skill> и
-                собирая <Skill>конфигурации для разных окружений</Skill>.
-              </li>
-            </ul>
-          </div>
-
-          <div className="group">
-            Еще я умею:
-            <ul className="list-disc ml-6 flex flex-col gap-2 text-[#cecece] group-hover:text-white transition-all">
-              <li>
-                Работать с <Skill>Git</Skill>.
-              </li>
-              <li>
-                Работать с <Skill>Linux системами</Skill> и серверами,
-                настраивать <Skill>DNS</Skill>, подключать домены с{" "}
-                <Skill> SSL сертификатами</Skill>. Ставить на них{" "}
-                <Skill>Git</Skill>, чтобы подкачивать от туда файлы и{" "}
-                <Skill>запускать сервер с публичным IP</Skill>.
-              </li>
-              <li>
-                Конфигурировать <Skill>SMTP</Skill> сервер под свой домен и
-                заниматься рассылкой{" "}
-                <Skill>стилизованных email через nodemailer</Skill>.
-              </li>
-              <li>
-                Опыт работы с <Skill>OAuth</Skill> включая подключение их логин
-                через <Skill>провайдера(Google, Github, etc.)</Skill>.
-              </li>
-              <li>
-                Подключение <Skill>API любой сложности и глубины</Skill>,
-                платежные, такие как ЮКасса или стандартные вроде Open AI.
-              </li>
-              <li>
-                Отправкой обычных или blob файлов на облачные хранилища
-                <Skill>(Yandex Cloud, AWS Backet, Azure, etc)</Skill>.
-              </li>
-              <li>
-                Писать на <Skill>JavaScript/TypeScript (NodeJS)</Skill>,
-                используя фреймворки <Skill>Express</Skill>,{" "}
-                <Skill>NextJS</Skill>.
-              </li>
-              <li>
-                Работать, как с <Skill>реляционными БД Azure Cosmos DB</Skill>,{" "}
-                <Skill>MySQL</Skill>, так и <Skill>нереляционной MongoDB</Skill>
-                , <Skill>Firebase</Skill>.
-              </li>
-              <li>
-                Работать с <Skill>WebSockets</Skill> через{" "}
-                <Skill>Socket IO</Skill>.
-              </li>
-              <li>
-                Читать документацию, вести переписку и говорить не только на
-                русском, но и <Skill>на английском языке</Skill>.
-              </li>
-              <li>
-                Поднимать хостинг на pay-as-you go решениях, вроде{" "}
-                <Skill>AWS</Skill> и <Skill>Vercel</Skill>.
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex flex-row gap-3 text-light-grey text-sm">
-            <div>aivargabd@gmail.com</div>
-            <div>tg: @aivargab</div>
-          </div>
-        </div>
         <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">UI</h2>
           <Accordion type="single" collapsible className="w-full ">
@@ -289,6 +130,12 @@ export default function Home() {
               />
             </div>
           </Link>
+        </div>
+        <div className="fixed bottom-4">
+          <div className="flex flex-row gap-3 text-light-grey text-sm">
+            <div>aivargabd@gmail.com</div>
+            <div>tg: @aivargab</div>
+          </div>
         </div>
       </div>
     </>
