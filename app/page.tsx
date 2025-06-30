@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 mt-[200px]">
           <h2 className="text-lg font-medium">UI</h2>
           <Accordion type="single" collapsible className="w-full ">
             {UIExamples.map((item, index) => (
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
           </Link>
         </div>
-        <div className="fixed bottom-4">
+        <div className="">
           <div className="flex flex-row gap-3 text-light-grey text-sm">
             <div>aivargabd@gmail.com</div>
             <div>tg: @aivargab</div>
