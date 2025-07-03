@@ -13,31 +13,31 @@ import ThemeButton from "@/components/home-page/examples/ThemeButton";
 import CustomDrawer from "@/components/home-page/examples/Drawer";
 
 const UIExamples = [
-  {
-    name: "Интерактивный список",
-    text: "С анимацией открытия как в IOS",
-    component: <List />,
-  },
-  {
-    name: "Табы",
-    text: "С анимацией как в vercel.com/dashboard",
-    component: <Tabs />,
-  },
-  {
-    name: "Шторка снизу",
-    text: "Перетаскиваемая нижняя шторка для мобильных устройств",
-    component: <CustomDrawer />,
-  },
-  {
-    name: "Компактные интерактивные элементы",
-    text: "Расширяющиеся кликабельные элементы для мобильных устройств",
-    component: <ExpandableButtons />,
-  },
-  {
-    name: "Кнопка для смены светлой/темной тем",
-    text: "Почти как у joshwcomeau.com",
-    component: <ThemeButton />,
-  },
+   {
+  name: "Interactive List",
+  text: "Features opening animations inspired by iOS.",
+  component: <List />,
+},
+{
+  name: "Tabs",
+  text: "Includes smooth animations similar to those on vercel.com/dashboard.",
+  component: <Tabs />,
+},
+{
+  name: "Content Block",
+  text: "A draggable bottom sheet designed for mobile devices.",
+  component: <CustomDrawer />,
+},
+{
+  name: "Compact Interactive Items",
+  text: "Expandable buttons optimized for mobile interaction.",
+  component: <ExpandableButtons />,
+},
+{
+  name: "Theme Switch Button",
+  text: "A sleek light/dark mode toggle, inspired by joshwcomeau.com.",
+  component: <ThemeButton />,
+}
 ];
 
 const Skill = ({
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="flex flex-col gap-2">
           <div className="w-full flex">
             <div className="w-fit">
-              <div className="font-medium">Айвар Габдрахманов</div>
+              <div className="font-medium">Aivar Gabdrahmanov</div>
               <div className="text-light-grey">fullstack web dev</div>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
 
         <div className=" flex flex-col gap-3">
-          <h2 className="text-lg font-medium">Последние проекты</h2>
+          <h2 className="text-lg font-medium">Latest personal projects</h2>
           <Link
             href={"https://ideaparallels.vercel.app/"}
             rel="noopener noreferrer"
@@ -98,7 +98,7 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Лендинг для 5 версии продукта, своего стартапа(пока на паузе)
+                Collective research platform
               </div>
               <ExternalLink
                 size={20}
@@ -121,8 +121,7 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Личный open-source проект используя MyAnimeList API для
-                продуктовых скиллов
+               Personal open-source side project powered by myanimelist api
               </div>
               <ExternalLink
                 size={20}
@@ -134,7 +133,7 @@ export default function Home() {
         <div className="">
           <div className="flex flex-row gap-3 text-light-grey text-sm">
             <div>aivargabd@gmail.com</div>
-            <div>tg: @aivargab</div>
+            <div>Telegram: @aivargab</div>
           </div>
         </div>
       </div>
