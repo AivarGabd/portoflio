@@ -193,7 +193,7 @@ export default function Home() {
         <div className=" flex flex-col gap-3">
           <h2 className="text-lg font-medium">Latest personal projects</h2>
           <Link
-            href={"https://ideaparallels.vercel.app/"}
+            href={"https://ideaparallels-test.vercel.app"}
             rel="noopener noreferrer"
             target="_blank"
           >
