@@ -206,7 +206,7 @@ export default function Home() {
                 />{" "}
               </div>
               <div className="text-light-grey text-sm">
-                Collective research platform
+                Community research platform
               </div>
               <ExternalLink
                 size={20}
