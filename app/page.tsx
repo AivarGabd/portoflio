@@ -105,11 +105,13 @@ export default function Home() {
           </div>
 
           <div>
-            С октября 2024 года работаю part-time в продуктовой команде под
-            руководством фаундера, который ранее запускал множество успешных
-            продуктов в России и был Head of Launch в IQOS. В команде занимаюсь
-            full-stack разработкой, DevOps-задачами, CI/CD и внедрением практик
-            корпоративной разработки.
+            С октября 2024 года сотрудничаю part-time с сильной продуктовой
+            командой под руководством фаундера сейчас работает в Philip Morris
+            international, который ранее запускал десятки успешных продуктов в
+            России и был Head of Launch в IQOS. В этой команде работаю как
+            full-stack разработчик и DevOps-инженер, активно внедряю CI/CD,
+            автоматизацию, и держу баланс между enterprise like и продуктовой
+            -разработки.
           </div>
         </div>
 
@@ -152,16 +154,39 @@ export default function Home() {
           </div>
           <div>
             <div className="flex flex-col gap-2">
-              Ideaparallels — fullstack платформа для коллективной работы с контентом
-              Проект в духе Miro/Figma, но для редактирования и исследования текстов, медиа и аналитики в реальном времени.
+              Ideaparallels — fullstack платформа для коллективной работы с
+              контентом Проект в духе Miro/Figma, но для редактирования и
+              исследования текстов, медиа и аналитики в реальном времени.
               <ul className="list-disc list-inside pl-4 mt-2">
-                <li>Разработал MVP с нуля, включая real-time синхронизацию, редакторы и личный кабинет</li>
-                <li>Frontend: Next.js (SSR, Server Actions), Tailwind CSS, HeroUI (React Aria wrapper), Framer Motion</li>
-                <li>Backend: Supabase (PostgreSQL с real-time подписками), Zustand для кэширования и оптимизации запросов</li>
-                <li>Добавил возможность редактировать контент в стиле Notion (Editor.js), загружать файлы и парсить YouTube-видео</li>
-                <li>Реализовал авторизацию через email+пароль, Google, Google One Tap</li>
-                <li>Провел UX-аудит, устранил избыточные перерендеры и оптимизировал работу с Supabase</li>
-                <li>Архитектура платформы предполагает масштабируемость: выбрана SQL-БД с возможностью частичной денормализации под NoSQL-стратегии</li>
+                <li>
+                  Разработал MVP с нуля, включая real-time синхронизацию,
+                  редакторы и личный кабинет
+                </li>
+                <li>
+                  Frontend: Next.js (SSR, Server Actions), Tailwind CSS, HeroUI
+                  (React Aria wrapper), Framer Motion
+                </li>
+                <li>
+                  Backend: Supabase (PostgreSQL с real-time подписками), Zustand
+                  для кэширования и оптимизации запросов
+                </li>
+                <li>
+                  Добавил возможность редактировать контент в стиле Notion
+                  (Editor.js), загружать файлы и парсить YouTube-видео
+                </li>
+                <li>
+                  Реализовал авторизацию через email+пароль, Google, Google One
+                  Tap
+                </li>
+                <li>
+                  Провел UX-аудит, устранил избыточные перерендеры и
+                  оптимизировал работу с Supabase
+                </li>
+                <li>
+                  Архитектура платформы предполагает масштабируемость: выбрана
+                  SQL-БД с возможностью частичной денормализации под
+                  NoSQL-стратегии
+                </li>
               </ul>
             </div>
           </div>
