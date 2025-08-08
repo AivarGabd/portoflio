@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        {/* <div className="flex flex-col gap-3">
           <div>
             Программирование стало моим главным увлечением с 19 лет. Тогда я
             начал разрабатывать Android-приложения и создал дипломный проект.
@@ -113,9 +113,9 @@ export default function Home() {
             автоматизацию, и держу баланс между enterprise like и продуктовой
             -разработки.
           </div>
-        </div>
+        </div> */}
 
-        <div className="flex flex-col gap-3">
+        {/* <div className="flex flex-col gap-3">
           <h2 className="text-lg font-medium">Опыт работы:</h2>
           <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-2">
@@ -190,7 +190,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-3 mt-[200px]">
           <h2 className="text-lg font-medium">UI</h2>
